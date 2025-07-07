@@ -1,0 +1,463 @@
+[13:01:50 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[13:01:51 DBG] Hosting starting
+[13:01:51 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:01:51 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[13:01:52 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[13:01:52 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[13:01:52 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[13:01:52 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[13:01:52 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[13:01:52 DBG] Decrypting secret element using Windows DPAPI.
+[13:01:52 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[13:01:53 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[13:01:53 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[13:01:53 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[13:01:53 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[13:01:53 INF] Now listening on: https://localhost:7164
+[13:01:53 INF] Now listening on: http://localhost:5141
+[13:01:53 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[13:01:53 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[13:01:53 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[13:01:53 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[13:01:53 DBG] Connection id "0HNDQ442I545E" received FIN.
+[13:01:53 DBG] Connection id "0HNDQ442I545F" accepted.
+[13:01:53 DBG] Connection id "0HNDQ442I545F" received FIN.
+[13:01:53 DBG] Connection id "0HNDQ442I545E" accepted.
+[13:01:53 DBG] Connection id "0HNDQ442I545F" started.
+[13:01:53 INF] Application started. Press Ctrl+C to shut down.
+[13:01:53 DBG] Connection id "0HNDQ442I545E" started.
+[13:01:54 INF] Hosting environment: Development
+[13:01:54 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:01:54 DBG] Hosting started
+[13:01:54 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[13:01:54 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[13:01:54 DBG] Connection id "0HNDQ442I545E" stopped.
+[13:01:54 DBG] Connection id "0HNDQ442I545F" stopped.
+[13:01:54 DBG] Connection id "0HNDQ442I545F" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:01:54 DBG] Connection id "0HNDQ442I545E" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:01:55 DBG] Connection id "0HNDQ442I545G" accepted.
+[13:01:55 DBG] Connection id "0HNDQ442I545G" started.
+[13:01:56 DBG] Connection 0HNDQ442I545G established using the following protocol: "Tls13"
+[13:01:56 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:01:56 DBG] Wildcard detected, all requests with hosts will be allowed.
+[13:01:56 DBG] No candidates found for the request path '/swagger/index.html'
+[13:01:56 DBG] Request did not match any endpoints
+[13:01:57 DBG] Response markup is scheduled to include Browser Link script injection.
+[13:01:57 DBG] Response markup is scheduled to include browser refresh script injection.
+[13:01:57 DBG] Response markup was updated to include Browser Link script injection.
+[13:01:57 DBG] Response markup was updated to include browser refresh script injection.
+[13:01:57 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1200.0992ms
+[13:01:58 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:01:58 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:01:58 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 47.5837ms
+[13:01:58 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 176.0644ms
+[13:01:58 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:01:58 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[13:01:58 DBG] Request did not match any endpoints
+[13:01:58 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 157.9807ms
+[13:02:03 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:02:03 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 78.9754ms
+[13:02:04 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:02:04 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[13:02:04 DBG] Request did not match any endpoints
+[13:02:04 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 197.3953ms
+[13:02:33 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[13:02:34 DBG] Hosting starting
+[13:02:35 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:02:35 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[13:02:35 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[13:02:36 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[13:02:36 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[13:02:36 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[13:02:36 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[13:02:36 DBG] Decrypting secret element using Windows DPAPI.
+[13:02:36 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[13:02:36 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[13:02:36 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[13:02:36 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[13:02:36 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[13:02:37 INF] Now listening on: https://localhost:7164
+[13:02:37 DBG] Connection id "0HNDQ44FGR170" accepted.
+[13:02:37 DBG] Connection id "0HNDQ44FGR171" received FIN.
+[13:02:37 INF] Now listening on: http://localhost:5141
+[13:02:37 DBG] Connection id "0HNDQ44FGR170" received FIN.
+[13:02:37 DBG] Connection id "0HNDQ44FGR170" started.
+[13:02:37 DBG] Connection id "0HNDQ44FGR171" accepted.
+[13:02:37 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[13:02:37 DBG] Connection id "0HNDQ44FGR171" started.
+[13:02:37 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[13:02:37 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[13:02:37 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[13:02:37 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[13:02:37 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[13:02:37 DBG] Connection id "0HNDQ44FGR171" stopped.
+[13:02:37 DBG] Connection id "0HNDQ44FGR170" stopped.
+[13:02:38 INF] Application started. Press Ctrl+C to shut down.
+[13:02:38 DBG] Connection id "0HNDQ44FGR172" accepted.
+[13:02:37 DBG] Connection id "0HNDQ44FGR171" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:02:39 INF] Hosting environment: Development
+[13:02:39 DBG] Connection id "0HNDQ44FGR170" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:02:39 DBG] Connection id "0HNDQ44FGR172" started.
+[13:02:39 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:02:39 DBG] Hosting started
+[13:02:39 DBG] Connection 0HNDQ44FGR172 established using the following protocol: "Tls13"
+[13:02:40 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:02:40 DBG] Wildcard detected, all requests with hosts will be allowed.
+[13:02:41 DBG] No candidates found for the request path '/swagger/index.html'
+[13:02:41 DBG] Request did not match any endpoints
+[13:02:41 DBG] Response markup is scheduled to include Browser Link script injection.
+[13:02:41 DBG] Response markup is scheduled to include browser refresh script injection.
+[13:02:41 DBG] Response markup was updated to include Browser Link script injection.
+[13:02:41 DBG] Response markup was updated to include browser refresh script injection.
+[13:02:41 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1902.8169ms
+[13:02:42 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:02:42 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:02:42 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 476.2289ms
+[13:02:43 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 719.7982ms
+[13:02:43 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:02:43 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[13:02:43 DBG] Request did not match any endpoints
+[13:02:43 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 266.7153ms
+[13:03:01 DBG] Connection id "0HNDQ44FGR173" accepted.
+[13:03:01 DBG] Connection id "0HNDQ44FGR173" received FIN.
+[13:03:01 DBG] Connection id "0HNDQ44FGR173" started.
+[13:03:01 DBG] Connection id "0HNDQ44FGR174" accepted.
+[13:03:01 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[13:03:01 DBG] Connection id "0HNDQ44FGR174" started.
+[13:03:01 DBG] Connection id "0HNDQ44FGR173" stopped.
+[13:03:01 DBG] Connection 0HNDQ44FGR174 established using the following protocol: "Tls13"
+[13:03:01 DBG] Connection id "0HNDQ44FGR173" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:03:01 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 152
+[13:03:01 DBG] 1 candidate(s) found for the request path '/api/Patients'
+[13:03:01 DBG] Endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+[13:03:01 DBG] Request matched endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:01 DBG] Static files was skipped as the request already matched an endpoint.
+[13:03:02 DBG] Successfully validated the token.
+[13:03:02 DBG] AuthenticationScheme: Bearer was successfully authenticated.
+[13:03:02 DBG] Authorization was successful.
+[13:03:02 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:02 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientCreateRequest) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:03:02 DBG] Execution plan of authorization filters (in the following order): ["None"]
+[13:03:02 DBG] Execution plan of resource filters (in the following order): ["None"]
+[13:03:02 DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+[13:03:02 DBG] Execution plan of exception filters (in the following order): ["None"]
+[13:03:02 DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+[13:03:02 DBG] Executing controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[13:03:03 DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+[13:03:06 DBG] Executed controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[13:03:06 DBG] Attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' ...
+[13:03:06 DBG] Attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' using the name '' in request data ...
+[13:03:06 DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+[13:03:06 DBG] Connection id "0HNDQ44FGR174", Request id "0HNDQ44FGR174:00000001": started reading request body.
+[13:03:06 DBG] Connection id "0HNDQ44FGR174", Request id "0HNDQ44FGR174:00000001": done reading request body.
+[13:03:06 DBG] JSON input formatter succeeded, deserializing to type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'
+[13:03:06 DBG] Done attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:06 DBG] Done attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:06 DBG] Attempting to validate the bound parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' ...
+[13:03:06 DBG] Done attempting to validate the bound parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:06 INF] Creating patient for email tk@alfredbeit.com by user d2b57619-3993-4a8e-9f10-e135e90254b8 from IP ::1
+[13:03:09 DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+[13:03:09 DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+[13:03:10 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:11 DBG] Compiling query expression: 
+'DbSet<Patient>()
+    .Where(p => p.Email == __email_0)'
+[13:03:12 DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Patient>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Patient.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Patient.Email (string) Required Index, 1], [Property: Patient.EncryptedName (string) Required, 2], [Property: Patient.FhirPatientId (string) Required Index, 3], [Property: Patient.UserId (string), 4] }
+        SELECT p.Id, p.Email, p.EncryptedName, p.FhirPatientId, p.UserId
+        FROM Patients AS p
+        WHERE p.Email == @__email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Patient>, 
+    TelehealthApi.Core.TelehealthDbContext, 
+    False, 
+    False, 
+    True
+)'
+[13:03:12 DBG] Creating DbConnection.
+[13:03:12 DBG] Created DbConnection. (117ms).
+[13:03:12 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:15 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:15 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:15 DBG] Created DbCommand for 'ExecuteReader' (16ms).
+[13:03:15 DBG] Initialized DbCommand for 'ExecuteReader' (68ms).
+[13:03:16 DBG] Executing DbCommand [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__email_0
+[13:03:16 INF] Executed DbCommand (576ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__email_0
+[13:03:16 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:16 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 73ms reading results.
+[13:03:16 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:16 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (39ms).
+[13:03:18 INF] No existing patients found for email: tk@alfredbeit.com
+[13:03:19 INF] Successfully created patient with ID 48130998
+[13:03:19 DBG] Context 'TelehealthDbContext' started tracking 'Patient' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:19 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[13:03:19 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[13:03:19 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[13:03:20 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:20 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:20 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:20 DBG] Created DbCommand for 'ExecuteReader' (4ms).
+[13:03:20 DBG] Initialized DbCommand for 'ExecuteReader' (10ms).
+[13:03:20 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[13:03:20 INF] Executed DbCommand (353ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[13:03:20 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:20 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 23ms reading results.
+[13:03:20 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:20 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (11ms).
+[13:03:20 DBG] An entity of type 'Patient' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:20 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[13:03:20 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:20 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:20 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[13:03:20 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[13:03:21 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[13:03:21 DBG] Creating DbConnection.
+[13:03:21 DBG] Created DbConnection. (7ms).
+[13:03:21 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:21 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:21 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:21 DBG] Created DbCommand for 'ExecuteReader' (22ms).
+[13:03:21 DBG] Initialized DbCommand for 'ExecuteReader' (32ms).
+[13:03:21 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:21 INF] Executed DbCommand (348ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:21 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:21 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 16ms reading results.
+[13:03:21 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:21 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (41ms).
+[13:03:21 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:21 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[13:03:21 DBG] 'TelehealthDbContext' disposed.
+[13:03:21 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:22 DBG] Disposed connection to database '' on server '' (15ms).
+[13:03:22 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:22 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:22 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[13:03:22 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[13:03:22 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[13:03:22 DBG] Creating DbConnection.
+[13:03:22 DBG] Created DbConnection. (146ms).
+[13:03:22 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:23 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:23 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:23 DBG] Created DbCommand for 'ExecuteReader' (9ms).
+[13:03:23 DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+[13:03:23 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:23 INF] Executed DbCommand (516ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:24 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:24 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 80ms reading results.
+[13:03:24 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:24 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (34ms).
+[13:03:24 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:24 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[13:03:24 DBG] 'TelehealthDbContext' disposed.
+[13:03:24 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:24 DBG] Disposed connection to database '' on server '' (11ms).
+[13:03:24 DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+[13:03:24 DBG] No information found on request to perform content negotiation.
+[13:03:24 DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+[13:03:24 DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+[13:03:24 DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+[13:03:24 INF] Executing CreatedAtActionResult, writing value of type 'TelehealthApi.Core.Models.PatientModel'.
+[13:03:24 DBG] Found the endpoints ["TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)"] for address (id=[48130998],action=[GetPatient],controller=[Patients])
+[13:03:25 DBG] Successfully processed template api/Patients/{id} for TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) resulting in /api/Patients/48130998 and 
+[13:03:25 DBG] Link generation succeeded for endpoints ["TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)"] with result /api/Patients/48130998
+[13:03:25 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 22797.8424ms
+[13:03:25 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:25 DBG] Connection id "0HNDQ44FGR174" completed keep alive response.
+[13:03:25 DBG] 'TelehealthDbContext' disposed.
+[13:03:25 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:25 DBG] Disposed connection to database '' on server '' (29ms).
+[13:03:25 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 24112.1156ms
+[13:03:35 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 152
+[13:03:35 DBG] 1 candidate(s) found for the request path '/api/Patients'
+[13:03:35 DBG] Endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+[13:03:35 DBG] Request matched endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:35 DBG] Static files was skipped as the request already matched an endpoint.
+[13:03:35 DBG] Successfully validated the token.
+[13:03:35 DBG] AuthenticationScheme: Bearer was successfully authenticated.
+[13:03:35 DBG] Authorization was successful.
+[13:03:35 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:35 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientCreateRequest) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:03:35 DBG] Execution plan of authorization filters (in the following order): ["None"]
+[13:03:35 DBG] Execution plan of resource filters (in the following order): ["None"]
+[13:03:35 DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+[13:03:35 DBG] Execution plan of exception filters (in the following order): ["None"]
+[13:03:35 DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+[13:03:35 DBG] Executing controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[13:03:35 DBG] Executed controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[13:03:35 DBG] Attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' ...
+[13:03:35 DBG] Attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' using the name '' in request data ...
+[13:03:35 DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+[13:03:35 DBG] Connection id "0HNDQ44FGR174", Request id "0HNDQ44FGR174:00000002": started reading request body.
+[13:03:35 DBG] Connection id "0HNDQ44FGR174", Request id "0HNDQ44FGR174:00000002": done reading request body.
+[13:03:35 DBG] JSON input formatter succeeded, deserializing to type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'
+[13:03:35 DBG] Done attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:35 DBG] Done attempting to bind parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:35 DBG] Attempting to validate the bound parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest' ...
+[13:03:35 DBG] Done attempting to validate the bound parameter 'request' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientCreateRequest'.
+[13:03:35 INF] Creating patient for email tk@alfredbeit.com by user d2b57619-3993-4a8e-9f10-e135e90254b8 from IP ::1
+[13:03:36 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:36 DBG] Creating DbConnection.
+[13:03:36 DBG] Created DbConnection. (13ms).
+[13:03:36 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:36 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:36 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:36 DBG] Created DbCommand for 'ExecuteReader' (12ms).
+[13:03:36 DBG] Initialized DbCommand for 'ExecuteReader' (17ms).
+[13:03:36 DBG] Executing DbCommand [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__email_0
+[13:03:36 INF] Executed DbCommand (364ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__email_0
+[13:03:36 DBG] Context 'TelehealthDbContext' started tracking 'Patient' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:36 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:36 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 78ms reading results.
+[13:03:37 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:37 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (3ms).
+[13:03:37 INF] No existing patients found for email: tk@alfredbeit.com
+[13:03:37 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:37 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:37 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[13:03:37 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[13:03:37 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[13:03:37 DBG] Creating DbConnection.
+[13:03:37 DBG] Created DbConnection. (2ms).
+[13:03:37 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:37 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:37 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:37 DBG] Created DbCommand for 'ExecuteReader' (10ms).
+[13:03:37 DBG] Initialized DbCommand for 'ExecuteReader' (20ms).
+[13:03:37 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:37 INF] Executed DbCommand (321ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:38 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:38 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 11ms reading results.
+[13:03:38 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:38 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (5ms).
+[13:03:38 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:38 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[13:03:38 DBG] 'TelehealthDbContext' disposed.
+[13:03:38 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:38 DBG] Disposed connection to database '' on server '' (23ms).
+[13:03:38 WRN] Failed to create patient: Duplicate email found. Manual resolution required.
+System.InvalidOperationException: Duplicate email found. Manual resolution required.
+   at TelehealthApi.Core.Services.PatientService.CreatePatientAsync(PatientModel patient, String userId) in C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Core\Services\PatientService.cs:line 60
+   at TelehealthApi.Api.Controllers.PatientsController.CreatePatient(PatientCreateRequest request) in C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api\Controllers\PatientsController.cs:line 97
+[13:03:38 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[13:03:38 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:38 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[13:03:39 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[13:03:39 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[13:03:39 DBG] Creating DbConnection.
+[13:03:39 DBG] Created DbConnection. (2ms).
+[13:03:39 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] Creating DbCommand for 'ExecuteReader'.
+[13:03:39 DBG] Created DbCommand for 'ExecuteReader' (29ms).
+[13:03:39 DBG] Initialized DbCommand for 'ExecuteReader' (95ms).
+[13:03:39 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:39 INF] Executed DbCommand (356ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:03:39 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 10ms reading results.
+[13:03:39 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (83ms).
+[13:03:39 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[13:03:39 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[13:03:39 DBG] 'TelehealthDbContext' disposed.
+[13:03:39 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] Disposed connection to database '' on server '' (3ms).
+[13:03:39 DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+[13:03:39 DBG] No information found on request to perform content negotiation.
+[13:03:39 DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+[13:03:39 DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+[13:03:39 DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+[13:03:39 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[13:03:39 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 4075.5587ms
+[13:03:39 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:03:39 DBG] Connection id "0HNDQ44FGR174" completed keep alive response.
+[13:03:39 DBG] 'TelehealthDbContext' disposed.
+[13:03:39 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[13:03:39 DBG] Disposed connection to database '' on server '' (3ms).
+[13:03:39 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 4358.7673ms
+[13:15:42 DBG] Connection id "0HNDQ44FGR172" received FIN.
+[13:15:43 DBG] Connection id "0HNDQ44FGR172" is closed. The last processed stream ID was 7.
+[13:15:43 DBG] The connection queue processing loop for 0HNDQ44FGR172 completed.
+[13:15:43 DBG] Connection id "0HNDQ44FGR172" sending FIN because: "The Socket transport's send loop completed gracefully."
+[13:15:43 DBG] Connection id "0HNDQ44FGR172" stopped.

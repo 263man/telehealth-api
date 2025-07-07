@@ -1,0 +1,63 @@
+[09:36:33 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[09:36:34 INF] Now listening on: https://localhost:7164
+[09:36:34 INF] Now listening on: http://localhost:5141
+[09:36:34 INF] Application started. Press Ctrl+C to shut down.
+[09:36:34 INF] Hosting environment: Development
+[09:36:34 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[09:36:37 INF] Request starting HTTP/2 GET https://localhost:7164/swagger - null null
+[09:36:38 INF] Request finished HTTP/2 GET https://localhost:7164/swagger - 301 0 null 904.5421ms
+[09:36:38 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[09:36:38 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 364.573ms
+[09:36:38 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/swagger-ui-bundle.js - null null
+[09:36:38 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/swagger-ui.css - null null
+[09:36:38 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/swagger-ui-standalone-preset.js - null null
+[09:36:40 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[09:36:38 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[09:36:40 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[09:36:40 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[09:36:40 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/swagger-ui.css - 200 152034 text/css 1461.286ms
+[09:36:40 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 1543.3496ms
+[09:36:40 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 1598.2742ms
+[09:36:40 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 1551.6328ms
+[09:36:40 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[09:36:40 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/favicon-32x32.png - null null
+[09:36:41 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+[09:36:41 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/favicon-32x32.png - 200 628 image/png 329.4065ms
+[09:36:41 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 908.4431ms
+[09:36:41 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[09:36:42 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 424.592ms
+[10:29:10 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[10:29:11 INF] Now listening on: https://localhost:7164
+[10:29:11 INF] Now listening on: http://localhost:5141
+[10:29:13 INF] Application started. Press Ctrl+C to shut down.
+[10:29:13 INF] Hosting environment: Development
+[10:29:13 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[10:29:13 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[10:29:14 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 852.9656ms
+[10:29:15 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[10:29:15 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 95.4855ms
+[10:29:16 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[10:29:16 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[10:29:16 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 18.7236ms
+[10:29:17 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 187.6971ms
+[10:29:17 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[10:29:17 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 242.582ms
+[10:29:44 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 121
+[10:29:45 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[10:29:45 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:29:48 INF] Attempting to create patient for email patience@tinder.com by user kimberly@saynts.com from IP ::1
+[10:29:56 INF] Executed DbCommand (428ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[10:29:57 INF] Executed DbCommand (307ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[10:29:57 INF] Created patient 1 with local ID "af79693b-494b-4f6d-a07a-ff3ddc3c4349" by user kimberly@saynts.com
+[10:29:57 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[10:29:57 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 11642.6895ms
+[10:29:57 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[10:29:57 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 12400.3939ms

@@ -1,0 +1,110 @@
+[13:49:50 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:49:53 INF] Now listening on: https://localhost:7164
+[13:49:53 INF] Now listening on: http://localhost:5141
+[13:49:53 INF] Application started. Press Ctrl+C to shut down.
+[13:49:54 INF] Hosting environment: Development
+[13:49:54 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:49:55 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:49:56 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1138.0703ms
+[13:49:56 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:49:56 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:49:56 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 37.0578ms
+[13:49:57 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 533.3055ms
+[13:49:57 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:49:57 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 102.5662ms
+[13:50:51 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[13:50:51 INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 17:14:15', Current time (UTC): '25/6/2025 11:50:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[13:50:52 INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 17:14:15', Current time (UTC): '25/6/2025 11:50:51'.
+[13:50:52 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+[13:50:52 INF] AuthenticationScheme: Bearer was challenged.
+[13:50:52 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 401 0 null 687.1128ms
+[13:52:33 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/register - application/json 162
+[13:52:33 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:52:33 INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(TelehealthApi.Api.Controllers.RegisterModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[13:52:34 INF] Attempting to register user with email: ngani@medicentre.com, FirstName: Padi, LastName: Ngani
+[13:52:40 INF] Executed DbCommand (546ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[13:52:40 ERR] User registration failed for email ngani@medicentre.com. Errors: Passwords must have at least one non alphanumeric character., Passwords must have at least one digit ('0'-'9')., Passwords must have at least one uppercase ('A'-'Z').
+[13:52:40 INF] Executing ObjectResult, writing value of type 'System.String'.
+[13:52:40 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api) in 6688.3323ms
+[13:52:40 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:52:40 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/register - 500 null text/plain; charset=utf-8 6864.314ms
+[13:53:01 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/register - application/json 172
+[13:53:01 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:53:01 INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(TelehealthApi.Api.Controllers.RegisterModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[13:53:01 INF] Attempting to register user with email: ngani@medicentre.com, FirstName: Padi, LastName: Ngani
+[13:53:02 INF] Executed DbCommand (338ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[13:53:02 ERR] User registration failed for email ngani@medicentre.com. Errors: Passwords must have at least one uppercase ('A'-'Z').
+[13:53:02 INF] Executing ObjectResult, writing value of type 'System.String'.
+[13:53:02 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api) in 506.221ms
+[13:53:02 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:53:02 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/register - 500 null text/plain; charset=utf-8 549.973ms
+[13:53:17 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/register - application/json 172
+[13:53:17 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:53:17 INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(TelehealthApi.Api.Controllers.RegisterModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[13:53:17 INF] Attempting to register user with email: ngani@medicentre.com, FirstName: Padi, LastName: Ngani
+[13:53:17 INF] Executed DbCommand (310ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[13:53:18 INF] Executed DbCommand (313ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[13:53:18 INF] Executed DbCommand (323ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+[13:53:18 INF] User ngani@medicentre.com registered successfully.
+[13:53:18 INF] Executing OkObjectResult, writing value of type 'System.String'.
+[13:53:18 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api) in 1535.4692ms
+[13:53:18 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[13:53:18 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/register - 200 null text/plain; charset=utf-8 1572.0144ms
+[13:54:11 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/login - application/json 78
+[13:54:11 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[13:54:11 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(TelehealthApi.Api.Controllers.LoginModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[13:54:11 INF] Attempting to log in user with email: ngani@medicentre.com
+[13:54:12 INF] Executed DbCommand (304ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[13:54:12 INF] Executed DbCommand (308ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[13:54:12 INF] User ngani@medicentre.com logged in successfully. Token generated.
+[13:54:12 INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[13:54:12 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api) in 881.405ms
+[13:54:12 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[13:54:12 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/login - 200 null application/json; charset=utf-8 952.6299ms
+[13:55:50 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[13:55:50 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:55:50 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:55:51 INF] Attempting to create patient for email pashu@loyal1.com by user ngani@medicentre.com from IP ::1
+[13:55:53 INF] Executed DbCommand (327ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[13:55:53 INF] Executed DbCommand (314ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:55:53 INF] Created patient 48027797 with local ID "56f84224-1ea1-49e5-99c8-ad53f99adeb8" by user ngani@medicentre.com
+[13:55:53 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[13:55:53 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 3671.2843ms
+[13:55:53 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[13:55:53 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 3720.4434ms

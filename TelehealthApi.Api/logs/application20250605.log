@@ -1,0 +1,377 @@
+[08:19:13 INF] Executed DbCommand (906ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[08:19:14 INF] Executed DbCommand (692ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[08:19:14 INF] Executed DbCommand (676ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[08:19:15 INF] Executed DbCommand (681ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+[08:19:16 INF] Executed DbCommand (689ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[08:19:16 INF] Executed DbCommand (715ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[08:19:17 INF] Executed DbCommand (682ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[08:19:17 INF] No migrations were applied. The database is already up to date.
+[08:19:53 INF] Executed DbCommand (923ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[08:19:54 INF] Executed DbCommand (709ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[08:19:54 INF] Executed DbCommand (682ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[08:19:55 INF] Executed DbCommand (668ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[08:19:56 INF] Executed DbCommand (679ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[08:19:56 INF] Applying migration '20250605061930_InitialCreateWithAuditLogs'.
+[08:19:57 INF] Executed DbCommand (675ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'telehealthkeps') IS NULL EXEC(N'CREATE SCHEMA [telehealthkeps];');
+[08:19:58 INF] Executed DbCommand (680ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+[08:19:59 INF] Executed DbCommand (684ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+[08:19:59 INF] Executed DbCommand (685ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [telehealthkeps].[AuditLogs] (
+    [Id] uniqueidentifier NOT NULL DEFAULT (NEWID()),
+    [UserId] nvarchar(450) NULL,
+    [Action] nvarchar(max) NULL,
+    [Timestamp] datetime2 NOT NULL,
+    [Details] nvarchar(max) NULL,
+    [ResourceType] nvarchar(max) NULL,
+    [ResourceId] nvarchar(max) NULL,
+    CONSTRAINT [PK_AuditLogs] PRIMARY KEY ([Id])
+);
+[08:20:00 INF] Executed DbCommand (680ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Patients] (
+    [Id] uniqueidentifier NOT NULL,
+    [FhirPatientId] nvarchar(max) NOT NULL,
+    [Email] nvarchar(450) NOT NULL,
+    [EncryptedName] nvarchar(max) NOT NULL,
+    [UserId] nvarchar(max) NULL,
+    CONSTRAINT [PK_Patients] PRIMARY KEY ([Id])
+);
+[08:20:01 INF] Executed DbCommand (681ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+[08:20:02 INF] Executed DbCommand (674ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+[08:20:02 INF] Executed DbCommand (691ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+[08:20:03 INF] Executed DbCommand (706ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+[08:20:04 INF] Executed DbCommand (710ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+[08:20:04 INF] Executed DbCommand (675ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Appointments] (
+    [Id] uniqueidentifier NOT NULL,
+    [FhirAppointmentId] nvarchar(max) NOT NULL,
+    [PatientId] uniqueidentifier NOT NULL,
+    [StartTime] datetime2 NOT NULL,
+    [EndTime] datetime2 NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Appointments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Appointments_Patients_PatientId] FOREIGN KEY ([PatientId]) REFERENCES [Patients] ([Id]) ON DELETE NO ACTION
+);
+[08:20:05 INF] Executed DbCommand (674ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Appointments_PatientId] ON [Appointments] ([PatientId]);
+[08:20:06 INF] Executed DbCommand (688ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+[08:20:06 INF] Executed DbCommand (662ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+[08:20:07 INF] Executed DbCommand (677ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+[08:20:08 INF] Executed DbCommand (670ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+[08:20:09 INF] Executed DbCommand (678ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+[08:20:09 INF] Executed DbCommand (664ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+[08:20:10 INF] Executed DbCommand (671ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+[08:20:11 INF] Executed DbCommand (670ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Patients_Email] ON [Patients] ([Email]);
+[08:20:11 INF] Executed DbCommand (707ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250605061930_InitialCreateWithAuditLogs', N'8.0.16');
+[10:06:42 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[10:06:43 INF] Now listening on: https://localhost:7164
+[10:06:43 INF] Now listening on: http://localhost:5141
+[10:06:43 INF] Application started. Press Ctrl+C to shut down.
+[10:06:43 INF] Hosting environment: Development
+[10:06:43 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[10:06:46 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[10:06:46 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 657.7463ms
+[10:06:46 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[10:06:46 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 113.255ms
+[10:06:47 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[10:06:47 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 273.2437ms
+[10:06:47 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[10:06:48 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 916.8269ms
+[10:07:05 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[10:07:05 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[10:07:05 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:07:15 INF] Executed DbCommand (869ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[10:07:15 INF] Accessed patient 1 by user taffy@Mpilo.com
+[10:07:15 INF] Action: GetPatient, UserId: taffy@Mpilo.com, Details: GetPatient
+[10:07:15 INF] Executing OkObjectResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[10:07:16 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 10657.2323ms
+[10:07:16 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[10:07:16 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 200 null application/json; charset=utf-8 11011.163ms
+[10:48:02 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 118
+[10:48:02 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[10:48:02 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:48:02 INF] Attempting to create patient for email reggy@leny.com by user taffy@Mpilo.com
+[10:48:07 INF] Executed DbCommand (900ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[10:48:08 INF] Executed DbCommand (678ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[10:48:08 INF] Created patient 7 with local ID "acdd3ac9-a83f-4679-b028-3e24e4d4acfe" by user taffy@Mpilo.com
+[10:48:08 INF] Action: CreatePatient, UserId: taffy@Mpilo.com, Details: CreatePatient
+[10:48:08 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[10:48:08 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 5937.8391ms
+[10:48:08 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[10:48:08 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 5985.656ms
+[10:51:43 INF] Request starting HTTP/1.1 PUT https://localhost:7164/api/Patients/7 - application/json 38
+[10:51:43 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api)'
+[10:51:43 INF] Route matched with {action = "UpdatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdatePatient(System.String, PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:51:43 INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[10:51:43 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api) in 42.8535ms
+[10:51:43 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api)'
+[10:51:43 INF] Request finished HTTP/1.1 PUT https://localhost:7164/api/Patients/7 - 400 null application/problem+json; charset=utf-8 78.4482ms
+[10:54:01 INF] Request starting HTTP/1.1 PUT https://localhost:7164/api/Patients/7 - application/json 125
+[10:54:01 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api)'
+[10:54:01 INF] Route matched with {action = "UpdatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdatePatient(System.String, PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:54:01 INF] Attempting to update patient 7 by user iwewe@mhatayako.com
+[10:54:01 INF] Action: UpdatePatient, UserId: iwewe@mhatayako.com, Details: UpdatePatient attempt
+[10:54:23 ERR] Failed executing DbCommand (21,419ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[10:54:23 ERR] An exception occurred while iterating over the results of a query for context type 'TelehealthApi.Core.TelehealthDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:9de04d43-d62e-4544-b920-8fac77e6a2df
+Error Number:-1,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:9de04d43-d62e-4544-b920-8fac77e6a2df
+Error Number:-1,State:0,Class:20
+[10:54:23 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api) in 22652.0716ms
+[10:54:24 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.UpdatePatient (TelehealthApi.Api)'
+[10:54:24 ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TelehealthApi.Api.Controllers.PatientsController.UpdatePatient(String id, PatientInput input) in C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api\Controllers\PatientsController.cs:line 135
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:9de04d43-d62e-4544-b920-8fac77e6a2df
+Error Number:-1,State:0,Class:20
+[10:54:24 INF] Request finished HTTP/1.1 PUT https://localhost:7164/api/Patients/7 - 500 null text/plain; charset=utf-8 22923.1355ms
+[10:55:58 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[10:55:58 INF] Now listening on: https://localhost:7164
+[10:55:58 INF] Now listening on: http://localhost:5141
+[10:55:59 INF] Application started. Press Ctrl+C to shut down.
+[10:56:00 INF] Hosting environment: Development
+[10:56:01 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[10:56:01 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[10:56:01 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 589.0628ms
+[10:56:01 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[10:56:01 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 156.6593ms
+[10:56:02 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[10:56:02 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 356.1469ms
+[10:56:03 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[10:56:04 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1435.2863ms
+[10:56:09 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[10:56:09 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 6.4527ms
+[10:56:13 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[10:56:13 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.1644ms
+[10:56:46 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/7 - null null
+[10:56:46 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[10:56:46 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[10:56:53 INF] Executed DbCommand (931ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[10:56:53 INF] Accessed patient 7 by user taffy@Mpilo.com
+[10:56:53 INF] Action: GetPatient, UserId: taffy@Mpilo.com, Details: GetPatient
+[10:56:53 INF] Executing OkObjectResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[10:56:53 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 7258.5199ms
+[10:56:53 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[10:56:53 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/7 - 200 null application/json; charset=utf-8 7545.9307ms
+[12:11:47 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 121
+[12:11:47 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[12:11:47 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[12:11:47 INF] Attempting to create patient for email Thandeka@tinder.com by user taffy@Mpilo.com
+[12:11:52 INF] Executed DbCommand (898ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[12:11:56 INF] Executed DbCommand (851ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[12:11:56 INF] Created patient 8 with local ID "7c5124e6-d429-49d4-b465-5e3696103fdd" by user taffy@Mpilo.com
+[12:11:56 INF] Action: CreatePatient, UserId: taffy@Mpilo.com, Details: CreatePatient
+[12:11:56 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[12:11:56 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 9304.0335ms
+[12:11:56 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[12:11:56 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 9337.9922ms
+[12:12:41 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/8 - null null
+[12:12:41 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[12:12:41 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[12:12:41 INF] Attempting to delete patient 8 by user iwewe@mhatayako.com
+[12:12:41 INF] Action: DeletePatient, UserId: iwewe@mhatayako.com, Details: DeletePatient attempt
+[12:12:41 INF] Successfully deleted FHIR patient 8 from FHIR server by user iwewe@mhatayako.com
+[12:12:42 INF] Executed DbCommand (683ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[12:12:43 INF] Executed DbCommand (671ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p0;
+[12:12:43 INF] Local patient record for FHIR ID 8 deleted by user iwewe@mhatayako.com
+[12:12:43 INF] Action: DeletePatient, UserId: iwewe@mhatayako.com, Details: Local patient deleted
+[12:12:44 INF] Executed DbCommand (658ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[12:12:44 INF] Deleted patient 8 by user iwewe@mhatayako.com
+[12:12:44 INF] Action: DeletePatient, UserId: iwewe@mhatayako.com, Details: Patient deleted
+[12:12:44 INF] Executing StatusCodeResult, setting HTTP status code 204
+[12:12:44 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 2837.2232ms
+[12:12:44 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[12:12:44 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/8 - 204 null null 2897.6682ms
+[12:12:59 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/8 - null null
+[12:12:59 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[12:12:59 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[12:12:59 INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+[12:12:59 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 316.6344ms
+[12:12:59 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[12:12:59 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/8 - 404 null application/problem+json; charset=utf-8 331.075ms

@@ -1,0 +1,1072 @@
+[15:54:47 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[15:54:48 INF] Now listening on: https://localhost:7164
+[15:54:48 INF] Now listening on: http://localhost:5141
+[15:54:49 INF] Application started. Press Ctrl+C to shut down.
+[15:54:49 INF] Hosting environment: Development
+[15:54:49 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[15:54:52 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[15:54:53 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1247.1196ms
+[15:54:54 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[15:54:54 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[15:54:54 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 54.731ms
+[15:54:54 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 149.7792ms
+[15:54:54 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[15:54:54 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.6364ms
+[15:54:56 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[15:54:56 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 13.968ms
+[15:55:00 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[15:55:00 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.8473ms
+[16:08:13 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/register - application/json 161
+[16:08:13 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[16:08:13 INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(TelehealthApi.Api.Controllers.RegisterModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[16:08:13 INF] Attempting to register user with email: kamuzonde@bugsbunny.com, FirstName: Tadiwa, LastName: Kamuzonde
+[16:08:27 INF] Executed DbCommand (1,048ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[16:08:28 INF] Executed DbCommand (879ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[16:08:30 INF] Executed DbCommand (1,147ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+[16:08:30 INF] User kamuzonde@bugsbunny.com registered successfully.
+[16:08:30 INF] Executing OkObjectResult, writing value of type 'System.String'.
+[16:08:30 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api) in 16936.697ms
+[16:08:30 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[16:08:30 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/register - 200 null text/plain; charset=utf-8 17200.8302ms
+[16:09:06 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/login - application/json 71
+[16:09:06 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[16:09:06 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(TelehealthApi.Api.Controllers.LoginModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[16:09:06 INF] Attempting to log in user with email: kamuzonde@bugsbunny.com
+[16:09:09 INF] Executed DbCommand (2,347ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[16:09:10 INF] Executed DbCommand (954ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[16:09:10 INF] User kamuzonde@bugsbunny.com logged in successfully. Token generated.
+[16:09:10 INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[16:09:10 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api) in 3662.0537ms
+[16:09:10 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[16:09:10 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/login - 200 null application/json; charset=utf-8 3692.7343ms
+[16:11:16 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - null null
+[16:11:16 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[16:11:16 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:11:17 INF] Attempting to retrieve patient 48027797 by user kamuzonde@bugsbunny.com from IP ::1
+[16:11:21 INF] Successfully retrieved patient 48027797
+[16:11:23 INF] Executed DbCommand (1,176ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:11:23 INF] Successfully accessed patient 48027797 by user kamuzonde@bugsbunny.com
+[16:11:23 INF] Executing OkObjectResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[16:11:23 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 6545.7187ms
+[16:11:23 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[16:11:23 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - 200 null application/json; charset=utf-8 6686.2937ms
+[16:13:37 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 121
+[16:13:37 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:13:37 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:13:37 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[16:13:39 INF] Executed DbCommand (1,394ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[16:13:42 INF] No existing patients found for email: reggy@cuteandugly.com
+[16:13:42 INF] Successfully created patient with ID 48089025
+[16:13:44 INF] Executed DbCommand (1,512ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[16:13:45 INF] Executed DbCommand (1,193ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:13:45 INF] Created patient 48089025 with local ID "c35d8d2d-6495-481d-9e2f-64b25e431a7b" by user kamuzonde@bugsbunny.com
+[16:13:45 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[16:13:45 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 8095.9101ms
+[16:13:45 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:13:45 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 8141.0869ms
+[16:14:07 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 121
+[16:14:07 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:14:07 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:14:07 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[16:14:08 INF] Executed DbCommand (690ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[16:14:08 INF] No existing patients found for email: reggy@cuteandugly.com
+[16:14:09 INF] Executed DbCommand (788ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:14:09 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[16:14:09 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 2355.3027ms
+[16:14:09 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:14:09 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 2396.6373ms
+[16:34:28 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/test-email-search/pashu@loyal1.com - null null
+[16:34:28 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api)'
+[16:34:28 INF] Route matched with {action = "TestEmailSearch", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestEmailSearch(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:34:28 INF] Testing email search for pashu@loyal1.com by user kamuzonde@bugsbunny.com
+[16:34:34 INF] Potential duplicate email detected for: pashu@loyal1.com
+[16:34:48 INF] Executed DbCommand (1,061ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:34:48 INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType20`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType21`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[16:34:48 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api) in 19564.9584ms
+[16:34:48 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api)'
+[16:34:48 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/test-email-search/pashu@loyal1.com - 200 null application/json; charset=utf-8 19593.2807ms
+[16:36:24 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/test-email-search/pashu@loyal.com - null null
+[16:36:24 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api)'
+[16:36:24 INF] Route matched with {action = "TestEmailSearch", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TestEmailSearch(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:36:24 INF] Testing email search for pashu@loyal.com by user kamuzonde@bugsbunny.com
+[16:36:31 INF] No existing patients found for email: pashu@loyal.com
+[16:36:39 INF] Executed DbCommand (790ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:36:39 INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType20`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType21`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[16:36:39 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api) in 15235.3574ms
+[16:36:39 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.TestEmailSearch (TelehealthApi.Api)'
+[16:36:39 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/test-email-search/pashu@loyal.com - 200 null application/json; charset=utf-8 15259.1002ms
+[16:50:43 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[16:50:43 INF] Now listening on: https://localhost:7164
+[16:50:43 INF] Now listening on: http://localhost:5141
+[16:50:43 INF] Application started. Press Ctrl+C to shut down.
+[16:50:43 INF] Hosting environment: Development
+[16:50:43 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[16:50:46 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[16:50:46 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[16:50:46 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 620.3449ms
+[16:50:46 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 23.3785ms
+[16:50:47 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[16:50:47 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 181.254ms
+[16:50:47 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[16:50:47 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.8264ms
+[16:50:48 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[16:50:48 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 16.7762ms
+[16:50:51 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[16:50:51 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.9156ms
+[16:50:53 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[16:50:53 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 7.3643ms
+[16:50:54 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[16:50:54 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.1879ms
+[16:51:27 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[16:51:27 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:51:27 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[16:51:28 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[16:51:35 INF] Executed DbCommand (838ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[16:51:37 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[16:51:38 INF] Executed DbCommand (637ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[16:51:38 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[16:51:38 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 11149.4166ms
+[16:51:38 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[16:51:38 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 11534.2568ms
+[20:42:20 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[20:42:21 INF] Now listening on: https://localhost:7164
+[20:42:21 INF] Now listening on: http://localhost:5141
+[20:42:21 INF] Application started. Press Ctrl+C to shut down.
+[20:42:21 INF] Hosting environment: Development
+[20:42:21 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[20:42:24 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[20:42:25 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 971.4637ms
+[20:42:25 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:42:25 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[20:42:25 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 63.9035ms
+[20:42:25 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 175.1166ms
+[20:42:26 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:42:26 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 123.3229ms
+[20:42:28 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:42:28 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 13.6099ms
+[20:42:28 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:42:28 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 11.0739ms
+[20:42:32 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:42:32 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.3209ms
+[20:42:32 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:42:32 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.7886ms
+[20:42:39 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:42:39 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 5.8346ms
+[20:42:42 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:42:43 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.2619ms
+[20:42:48 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[20:42:48 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[20:42:48 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[20:42:50 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[20:42:57 INF] Executed DbCommand (626ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[20:42:58 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[20:42:59 INF] Executed DbCommand (428ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[20:42:59 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[20:42:59 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 10821.4384ms
+[20:42:59 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[20:42:59 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 11285.9495ms
+[21:58:31 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[21:58:32 INF] Now listening on: https://localhost:7164
+[21:58:32 INF] Now listening on: http://localhost:5141
+[21:58:32 INF] Application started. Press Ctrl+C to shut down.
+[21:58:32 INF] Hosting environment: Development
+[21:58:32 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[21:58:34 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[21:58:35 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 544.766ms
+[21:58:35 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[21:58:35 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[21:58:35 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 97.6571ms
+[21:58:36 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 586.7613ms
+[21:58:36 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[21:58:37 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 385.3032ms
+[21:59:06 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[21:59:06 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[21:59:06 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:59:08 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[21:59:13 INF] Executed DbCommand (616ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[21:59:14 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[21:59:15 INF] Executed DbCommand (405ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:59:15 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[21:59:15 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 8692.8238ms
+[21:59:15 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[21:59:15 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 9059.9674ms
+[22:06:41 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:06:42 INF] Now listening on: https://localhost:7164
+[22:06:42 INF] Now listening on: http://localhost:5141
+[22:06:42 INF] Application started. Press Ctrl+C to shut down.
+[22:06:42 INF] Hosting environment: Development
+[22:06:42 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:06:44 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:06:44 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 820.0013ms
+[22:06:45 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:06:45 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:06:45 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 55.0512ms
+[22:06:45 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 192.4855ms
+[22:06:46 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:06:46 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 714.965ms
+[22:06:48 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:06:48 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 19.3164ms
+[22:06:51 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:06:51 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.1889ms
+[22:06:57 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:06:57 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:06:57 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:06:58 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:07:03 INF] Executed DbCommand (589ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:07:04 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:07:05 INF] Executed DbCommand (522ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:07:05 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:07:05 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 7997.2316ms
+[22:07:05 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:07:05 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 8309.6289ms
+[22:08:26 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:08:26 INF] Now listening on: https://localhost:7164
+[22:08:26 INF] Now listening on: http://localhost:5141
+[22:08:26 INF] Application started. Press Ctrl+C to shut down.
+[22:08:26 INF] Hosting environment: Development
+[22:08:26 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:08:29 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:08:29 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 544.3235ms
+[22:08:29 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:08:29 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 49.4472ms
+[22:08:30 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:08:30 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 162.7074ms
+[22:08:30 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:08:30 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.6092ms
+[22:08:34 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:08:34 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 8.8452ms
+[22:08:35 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:08:35 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 15.9367ms
+[22:08:36 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:08:36 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.088ms
+[22:08:53 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:08:53 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:08:53 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:08:54 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:08:59 INF] Executed DbCommand (520ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:09:00 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:09:01 INF] Executed DbCommand (422ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:09:01 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:09:01 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 7599.1811ms
+[22:09:01 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:09:01 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 8082.2422ms
+[22:14:02 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:14:03 INF] Now listening on: https://localhost:7164
+[22:14:03 INF] Now listening on: http://localhost:5141
+[22:14:03 INF] Application started. Press Ctrl+C to shut down.
+[22:14:03 INF] Hosting environment: Development
+[22:14:03 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:14:05 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:14:05 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 515.3304ms
+[22:14:05 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:14:05 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 24.9134ms
+[22:14:06 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:14:06 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 119.8666ms
+[22:14:06 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:14:06 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.2546ms
+[22:14:45 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:14:45 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:14:45 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:14:46 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:14:51 INF] Executed DbCommand (518ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:14:52 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:14:53 INF] Executed DbCommand (404ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:14:53 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:14:53 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 7967.3152ms
+[22:14:53 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:14:53 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 8398.1051ms
+[22:19:30 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:19:30 INF] Now listening on: https://localhost:7164
+[22:19:31 INF] Now listening on: http://localhost:5141
+[22:19:31 INF] Application started. Press Ctrl+C to shut down.
+[22:19:32 INF] Hosting environment: Development
+[22:19:32 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:19:32 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:19:33 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 457.8771ms
+[22:19:33 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:19:33 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 136.2659ms
+[22:19:33 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:19:33 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 112.1935ms
+[22:19:34 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:19:34 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.6967ms
+[22:19:38 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:19:38 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 9.503ms
+[22:19:41 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:19:41 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.0905ms
+[22:20:15 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:20:15 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:20:15 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:20:16 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:20:22 INF] Executed DbCommand (589ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:20:24 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:20:24 INF] Executed DbCommand (404ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:20:24 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:20:24 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 8943.9056ms
+[22:20:24 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:20:24 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 9202.2553ms
+[22:37:36 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[22:37:37 DBG] Hosting starting
+[22:37:37 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:37:37 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[22:37:37 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[22:38:05 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[22:38:05 DBG] Hosting starting
+[22:38:05 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:38:05 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[22:38:05 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[22:38:05 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[22:38:05 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[22:38:05 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[22:38:05 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:38:05 DBG] Decrypting secret element using Windows DPAPI.
+[22:38:05 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:38:05 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[22:38:05 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[22:38:05 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[22:38:05 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[22:38:05 INF] Now listening on: https://localhost:7164
+[22:38:05 INF] Now listening on: http://localhost:5141
+[22:38:05 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[22:38:05 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[22:38:05 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[22:38:05 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[22:38:06 INF] Application started. Press Ctrl+C to shut down.
+[22:38:06 INF] Hosting environment: Development
+[22:38:06 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:38:06 DBG] Hosting started
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RP" received FIN.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RO" received FIN.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RP" accepted.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RO" accepted.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RP" started.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RO" started.
+[22:38:06 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:38:06 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RO" stopped.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RP" stopped.
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RO" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:38:06 DBG] Connection id "0HNDO2O28Q1RP" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:38:07 DBG] Connection id "0HNDO2O28Q1RQ" accepted.
+[22:38:08 DBG] Connection id "0HNDO2O28Q1RQ" started.
+[22:38:08 DBG] Connection 0HNDO2O28Q1RQ established using the following protocol: "Tls13"
+[22:38:08 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:38:08 DBG] Wildcard detected, all requests with hosts will be allowed.
+[22:38:09 DBG] No candidates found for the request path '/swagger/index.html'
+[22:38:09 DBG] Request did not match any endpoints
+[22:38:09 DBG] Response markup is scheduled to include Browser Link script injection.
+[22:38:09 DBG] Response markup is scheduled to include browser refresh script injection.
+[22:38:09 DBG] Response markup was updated to include Browser Link script injection.
+[22:38:09 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:38:09 DBG] Response markup was updated to include browser refresh script injection.
+[22:38:09 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 290.8103ms
+[22:38:09 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1319.2675ms
+[22:38:09 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:38:10 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 194.3422ms
+[22:38:10 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:38:10 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:38:10 DBG] Request did not match any endpoints
+[22:38:10 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 231.0764ms
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RR" accepted.
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RR" received FIN.
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RR" started.
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RS" accepted.
+[22:38:19 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RS" started.
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RR" stopped.
+[22:38:19 DBG] Connection id "0HNDO2O28Q1RR" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:38:19 DBG] Connection 0HNDO2O28Q1RS established using the following protocol: "Tls13"
+[22:38:19 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:38:19 DBG] 1 candidate(s) found for the request path '/api/Patients'
+[22:38:19 DBG] Endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+[22:38:19 DBG] Request matched endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:38:19 DBG] Static files was skipped as the request already matched an endpoint.
+[22:38:19 DBG] Successfully validated the token.
+[22:38:19 DBG] AuthenticationScheme: Bearer was successfully authenticated.
+[22:38:19 DBG] Authorization was successful.
+[22:38:19 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:38:19 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:38:19 DBG] Execution plan of authorization filters (in the following order): ["None"]
+[22:38:19 DBG] Execution plan of resource filters (in the following order): ["None"]
+[22:38:19 DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+[22:38:19 DBG] Execution plan of exception filters (in the following order): ["None"]
+[22:38:19 DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+[22:38:19 DBG] Executing controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:38:20 DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+[22:38:20 DBG] Executed controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:38:20 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:38:20 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' using the name '' in request data ...
+[22:38:20 DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+[22:38:20 DBG] Connection id "0HNDO2O28Q1RS", Request id "0HNDO2O28Q1RS:00000001": started reading request body.
+[22:38:20 DBG] Connection id "0HNDO2O28Q1RS", Request id "0HNDO2O28Q1RS:00000001": done reading request body.
+[22:38:21 DBG] JSON input formatter succeeded, deserializing to type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'
+[22:38:21 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:38:21 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:38:21 DBG] Attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:38:21 DBG] Done attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:38:21 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:38:22 DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+[22:38:22 DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+[22:38:23 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:38:23 DBG] Compiling query expression: 
+'DbSet<Patient>()
+    .Where(p => p.Email == __input_Email_0)'
+[22:38:23 DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Patient>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Patient.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Patient.Email (string) Required Index, 1], [Property: Patient.EncryptedName (string) Required, 2], [Property: Patient.FhirPatientId (string) Required Index, 3], [Property: Patient.UserId (string), 4] }
+        SELECT p.Id, p.Email, p.EncryptedName, p.FhirPatientId, p.UserId
+        FROM Patients AS p
+        WHERE p.Email == @__input_Email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Patient>, 
+    TelehealthApi.Core.TelehealthDbContext, 
+    False, 
+    False, 
+    True
+)'
+[22:38:23 DBG] Creating DbConnection.
+[22:38:23 DBG] Created DbConnection. (32ms).
+[22:38:23 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:27 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:27 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:38:27 DBG] Created DbCommand for 'ExecuteReader' (8ms).
+[22:38:27 DBG] Initialized DbCommand for 'ExecuteReader' (48ms).
+[22:38:27 DBG] Executing DbCommand [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:38:28 INF] Executed DbCommand (1,536ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:38:29 DBG] Context 'TelehealthDbContext' started tracking 'Patient' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:38:29 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:29 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 116ms reading results.
+[22:38:29 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:29 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (9ms).
+[22:38:30 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:38:30 DBG] Debug: Local matches count 1, FHIR matches count 1 for email reggy@cuteandugly.com
+[22:38:30 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:38:30 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:38:30 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[22:38:30 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[22:38:30 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[22:38:31 DBG] Creating DbConnection.
+[22:38:31 DBG] Created DbConnection. (1ms).
+[22:38:31 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:38:31 DBG] Created DbCommand for 'ExecuteReader' (1ms).
+[22:38:31 DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+[22:38:31 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:38:31 INF] Executed DbCommand (468ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:38:31 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 35ms reading results.
+[22:38:31 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (2ms).
+[22:38:31 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:38:31 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[22:38:31 DBG] 'TelehealthDbContext' disposed.
+[22:38:31 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] Disposed connection to database '' on server '' (2ms).
+[22:38:31 DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+[22:38:31 DBG] No information found on request to perform content negotiation.
+[22:38:31 DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+[22:38:31 DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+[22:38:31 DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+[22:38:31 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:38:31 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 12143.4752ms
+[22:38:31 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:38:31 DBG] Connection id "0HNDO2O28Q1RS" completed keep alive response.
+[22:38:31 DBG] 'TelehealthDbContext' disposed.
+[22:38:31 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:38:31 DBG] Disposed connection to database '' on server '' (3ms).
+[22:38:31 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 12585.0343ms
+[22:41:34 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[22:41:34 DBG] Hosting starting
+[22:41:34 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:41:34 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[22:41:34 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[22:41:34 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[22:41:34 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[22:41:34 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[22:41:34 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:41:34 DBG] Decrypting secret element using Windows DPAPI.
+[22:41:34 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:41:34 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[22:41:34 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[22:41:34 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[22:41:34 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[22:41:34 INF] Now listening on: https://localhost:7164
+[22:41:34 INF] Now listening on: http://localhost:5141
+[22:41:34 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[22:41:34 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[22:41:34 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[22:41:34 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[22:41:34 DBG] Connection id "0HNDO2Q0GC027" accepted.
+[22:41:35 DBG] Connection id "0HNDO2Q0GC027" started.
+[22:41:35 DBG] Connection id "0HNDO2Q0GC027" received FIN.
+[22:41:35 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:41:35 INF] Application started. Press Ctrl+C to shut down.
+[22:41:35 DBG] Connection id "0HNDO2Q0GC027" stopped.
+[22:41:35 INF] Hosting environment: Development
+[22:41:35 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:41:35 DBG] Connection id "0HNDO2Q0GC027" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:41:35 DBG] Hosting started
+[22:41:36 DBG] Connection id "0HNDO2Q0GC028" accepted.
+[22:41:36 DBG] Connection id "0HNDO2Q0GC028" started.
+[22:41:36 DBG] Connection 0HNDO2Q0GC028 established using the following protocol: "Tls13"
+[22:41:36 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:41:37 DBG] Wildcard detected, all requests with hosts will be allowed.
+[22:41:37 DBG] No candidates found for the request path '/swagger/index.html'
+[22:41:37 DBG] Request did not match any endpoints
+[22:41:37 DBG] Response markup is scheduled to include Browser Link script injection.
+[22:41:37 DBG] Response markup is scheduled to include browser refresh script injection.
+[22:41:37 DBG] Response markup was updated to include Browser Link script injection.
+[22:41:37 DBG] Response markup was updated to include browser refresh script injection.
+[22:41:37 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 895.6347ms
+[22:41:38 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:41:38 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:41:38 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 146.2002ms
+[22:41:38 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 353.1702ms
+[22:41:39 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:41:40 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:41:40 DBG] Request did not match any endpoints
+[22:41:40 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 605.1701ms
+[22:41:45 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:41:45 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 40.1801ms
+[22:41:47 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:41:47 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:41:47 DBG] Request did not match any endpoints
+[22:41:47 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.8267ms
+[22:41:50 DBG] Connection id "0HNDO2Q0GC029" accepted.
+[22:41:50 DBG] Connection id "0HNDO2Q0GC029" received FIN.
+[22:41:50 DBG] Connection id "0HNDO2Q0GC029" started.
+[22:41:50 DBG] Connection id "0HNDO2Q0GC02A" accepted.
+[22:41:50 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:41:50 DBG] Connection id "0HNDO2Q0GC02A" started.
+[22:41:50 DBG] Connection id "0HNDO2Q0GC029" stopped.
+[22:41:50 DBG] Connection id "0HNDO2Q0GC029" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:41:50 DBG] Connection 0HNDO2Q0GC02A established using the following protocol: "Tls13"
+[22:41:50 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:41:50 DBG] 1 candidate(s) found for the request path '/api/Patients'
+[22:41:50 DBG] Endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+[22:41:50 DBG] Request matched endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:41:50 DBG] Static files was skipped as the request already matched an endpoint.
+[22:41:51 DBG] Successfully validated the token.
+[22:41:51 DBG] AuthenticationScheme: Bearer was successfully authenticated.
+[22:41:51 DBG] Authorization was successful.
+[22:41:51 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:41:51 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:41:51 DBG] Execution plan of authorization filters (in the following order): ["None"]
+[22:41:51 DBG] Execution plan of resource filters (in the following order): ["None"]
+[22:41:51 DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+[22:41:51 DBG] Execution plan of exception filters (in the following order): ["None"]
+[22:41:51 DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+[22:41:51 DBG] Executing controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:41:52 DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+[22:41:52 DBG] Executed controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:41:52 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:41:52 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' using the name '' in request data ...
+[22:41:52 DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+[22:41:52 DBG] Connection id "0HNDO2Q0GC02A", Request id "0HNDO2Q0GC02A:00000001": started reading request body.
+[22:41:52 DBG] Connection id "0HNDO2Q0GC02A", Request id "0HNDO2Q0GC02A:00000001": done reading request body.
+[22:41:52 DBG] JSON input formatter succeeded, deserializing to type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'
+[22:41:52 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:41:52 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:41:52 DBG] Attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:41:52 DBG] Done attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:41:52 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:41:53 DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+[22:41:53 DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+[22:41:53 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:41:53 DBG] Compiling query expression: 
+'DbSet<Patient>()
+    .Where(p => p.Email == __input_Email_0)'
+[22:41:54 DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Patient>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Patient.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Patient.Email (string) Required Index, 1], [Property: Patient.EncryptedName (string) Required, 2], [Property: Patient.FhirPatientId (string) Required Index, 3], [Property: Patient.UserId (string), 4] }
+        SELECT p.Id, p.Email, p.EncryptedName, p.FhirPatientId, p.UserId
+        FROM Patients AS p
+        WHERE p.Email == @__input_Email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Patient>, 
+    TelehealthApi.Core.TelehealthDbContext, 
+    False, 
+    False, 
+    True
+)'
+[22:41:54 DBG] Creating DbConnection.
+[22:41:54 DBG] Created DbConnection. (25ms).
+[22:41:54 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:56 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:56 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:41:56 DBG] Created DbCommand for 'ExecuteReader' (8ms).
+[22:41:56 DBG] Initialized DbCommand for 'ExecuteReader' (27ms).
+[22:41:56 DBG] Executing DbCommand [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:41:57 INF] Executed DbCommand (599ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:41:57 DBG] Context 'TelehealthDbContext' started tracking 'Patient' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:41:57 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:57 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 118ms reading results.
+[22:41:57 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:57 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (20ms).
+[22:41:58 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:41:58 DBG] Debug: Local matches count 1, FHIR matches count 1 for email reggy@cuteandugly.com
+[22:41:58 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:41:58 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:41:58 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[22:41:58 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[22:41:58 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[22:41:58 DBG] Creating DbConnection.
+[22:41:58 DBG] Created DbConnection. (4ms).
+[22:41:58 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:58 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:58 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:41:58 DBG] Created DbCommand for 'ExecuteReader' (2ms).
+[22:41:58 DBG] Initialized DbCommand for 'ExecuteReader' (7ms).
+[22:41:58 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:41:59 INF] Executed DbCommand (414ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:41:59 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:59 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 14ms reading results.
+[22:41:59 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:59 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (1ms).
+[22:41:59 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:41:59 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[22:41:59 DBG] 'TelehealthDbContext' disposed.
+[22:41:59 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:59 DBG] Disposed connection to database '' on server '' (3ms).
+[22:41:59 DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+[22:41:59 DBG] No information found on request to perform content negotiation.
+[22:41:59 DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+[22:41:59 DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+[22:41:59 DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+[22:41:59 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:41:59 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 7879.6195ms
+[22:41:59 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:41:59 DBG] Connection id "0HNDO2Q0GC02A" completed keep alive response.
+[22:41:59 DBG] 'TelehealthDbContext' disposed.
+[22:41:59 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:41:59 DBG] Disposed connection to database '' on server '' (5ms).
+[22:41:59 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 8333.1962ms
+[22:45:55 DBG] Config reload token fired. Checking for changes...
+[22:46:07 DBG] Config reload token fired. Checking for changes...
+[22:46:07 DBG] Config reload token fired. Checking for changes...
+[22:47:13 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[22:47:13 DBG] Hosting starting
+[22:47:13 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:47:13 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[22:47:13 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[22:47:13 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[22:47:13 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[22:47:13 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[22:47:13 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:47:13 DBG] Decrypting secret element using Windows DPAPI.
+[22:47:13 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:47:13 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[22:47:13 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[22:47:13 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[22:47:13 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[22:47:14 INF] Now listening on: https://localhost:7164
+[22:47:14 INF] Now listening on: http://localhost:5141
+[22:47:14 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[22:47:14 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[22:47:14 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[22:47:14 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GG" accepted.
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GH" accepted.
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GG" started.
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GH" received FIN.
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GG" received FIN.
+[22:47:14 DBG] Connection id "0HNDO2T5QE0GH" started.
+[22:47:15 INF] Application started. Press Ctrl+C to shut down.
+[22:47:15 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:47:15 INF] Hosting environment: Development
+[22:47:15 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:47:15 DBG] Connection id "0HNDO2T5QE0GH" stopped.
+[22:47:15 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:47:15 DBG] Connection id "0HNDO2T5QE0GG" stopped.
+[22:47:15 DBG] Connection id "0HNDO2T5QE0GH" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:47:15 DBG] Hosting started
+[22:47:15 DBG] Connection id "0HNDO2T5QE0GG" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:47:16 DBG] Connection id "0HNDO2T5QE0GI" accepted.
+[22:47:16 DBG] Connection id "0HNDO2T5QE0GI" started.
+[22:47:16 DBG] Connection 0HNDO2T5QE0GI established using the following protocol: "Tls13"
+[22:47:16 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:47:16 DBG] Wildcard detected, all requests with hosts will be allowed.
+[22:47:17 DBG] No candidates found for the request path '/swagger/index.html'
+[22:47:17 DBG] Request did not match any endpoints
+[22:47:17 DBG] Response markup is scheduled to include Browser Link script injection.
+[22:47:17 DBG] Response markup is scheduled to include browser refresh script injection.
+[22:47:17 DBG] Response markup was updated to include Browser Link script injection.
+[22:47:17 DBG] Response markup was updated to include browser refresh script injection.
+[22:47:17 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 531.1598ms
+[22:47:17 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:47:17 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:47:17 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 17.0949ms
+[22:47:17 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 101.8927ms
+[22:47:18 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:47:18 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:47:18 DBG] Request did not match any endpoints
+[22:47:18 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 268.897ms
+[22:47:19 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:47:19 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 6.0823ms
+[22:47:23 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:47:23 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:47:23 DBG] Request did not match any endpoints
+[22:47:23 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.1684ms
+[22:47:23 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:47:23 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 9.0958ms
+[22:47:25 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:47:25 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:47:25 DBG] Request did not match any endpoints
+[22:47:25 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.3954ms
+[22:54:52 DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+[22:54:52 DBG] Hosting starting
+[22:54:53 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[22:54:53 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-1905e520-786d-410b-adc2-45857184ad19.xml'.
+[22:54:53 DBG] Reading data from file 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys\key-41d331a8-1af0-45c5-b91b-f4a8ba2461b7.xml'.
+[22:54:53 DBG] Found key {1905e520-786d-410b-adc2-45857184ad19}.
+[22:54:53 DBG] Found key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7}.
+[22:54:53 DBG] Considering key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} with expiration date 2025-08-20 07:16:44Z as default key.
+[22:54:53 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:54:53 DBG] Decrypting secret element using Windows DPAPI.
+[22:54:53 DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+[22:54:53 DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+[22:54:53 DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+[22:54:53 DBG] Using key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} as the default key.
+[22:54:53 DBG] Key ring with default key {41d331a8-1af0-45c5-b91b-f4a8ba2461b7} was loaded during application startup.
+[22:54:53 INF] Now listening on: https://localhost:7164
+[22:54:53 INF] Now listening on: http://localhost:5141
+[22:54:53 DBG] Loaded hosting startup assembly TelehealthApi.Api
+[22:54:53 DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+[22:54:53 DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+[22:54:53 DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+[22:54:53 DBG] Connection id "0HNDO31EH786Q" received FIN.
+[22:54:53 DBG] Connection id "0HNDO31EH786Q" accepted.
+[22:54:53 DBG] Connection id "0HNDO31EH786Q" started.
+[22:54:53 INF] Application started. Press Ctrl+C to shut down.
+[22:54:53 INF] Hosting environment: Development
+[22:54:53 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:54:53 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[22:54:53 DBG] Connection id "0HNDO31EH786Q" stopped.
+[22:54:53 DBG] Hosting started
+[22:54:53 DBG] Connection id "0HNDO31EH786Q" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:54:54 DBG] Connection id "0HNDO31EH786R" accepted.
+[22:54:55 DBG] Connection id "0HNDO31EH786R" started.
+[22:54:55 DBG] Connection 0HNDO31EH786R established using the following protocol: "Tls13"
+[22:54:55 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[22:54:55 DBG] Wildcard detected, all requests with hosts will be allowed.
+[22:54:55 DBG] No candidates found for the request path '/swagger/index.html'
+[22:54:55 DBG] Request did not match any endpoints
+[22:54:56 DBG] Response markup is scheduled to include Browser Link script injection.
+[22:54:56 DBG] Response markup is scheduled to include browser refresh script injection.
+[22:54:56 DBG] Response markup was updated to include Browser Link script injection.
+[22:54:56 DBG] Response markup was updated to include browser refresh script injection.
+[22:54:56 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 574.556ms
+[22:54:56 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[22:54:56 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[22:54:56 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 16.0316ms
+[22:54:56 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 151.1512ms
+[22:54:57 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[22:54:57 DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+[22:54:57 DBG] Request did not match any endpoints
+[22:54:57 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 102.3818ms
+[22:55:16 DBG] Connection id "0HNDO31EH786S" accepted.
+[22:55:16 DBG] Connection id "0HNDO31EH786S" received FIN.
+[22:55:16 DBG] Connection id "0HNDO31EH786S" started.
+[22:55:16 DBG] Connection id "0HNDO31EH786T" accepted.
+[22:55:17 DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+[22:55:17 DBG] Connection id "0HNDO31EH786T" started.
+[22:55:17 DBG] Connection id "0HNDO31EH786S" stopped.
+[22:55:17 DBG] Connection id "0HNDO31EH786S" sending FIN because: "The Socket transport's send loop completed gracefully."
+[22:55:17 DBG] Connection 0HNDO31EH786T established using the following protocol: "Tls13"
+[22:55:17 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 119
+[22:55:17 DBG] 1 candidate(s) found for the request path '/api/Patients'
+[22:55:17 DBG] Endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+[22:55:17 DBG] Request matched endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:55:17 DBG] Static files was skipped as the request already matched an endpoint.
+[22:55:17 DBG] Successfully validated the token.
+[22:55:17 DBG] AuthenticationScheme: Bearer was successfully authenticated.
+[22:55:17 DBG] Authorization was successful.
+[22:55:17 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:55:17 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[22:55:17 DBG] Execution plan of authorization filters (in the following order): ["None"]
+[22:55:17 DBG] Execution plan of resource filters (in the following order): ["None"]
+[22:55:17 DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+[22:55:17 DBG] Execution plan of exception filters (in the following order): ["None"]
+[22:55:17 DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+[22:55:17 DBG] Executing controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:55:18 DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+[22:55:18 DBG] Executed controller factory for controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api)
+[22:55:18 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:55:18 DBG] Attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' using the name '' in request data ...
+[22:55:18 DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+[22:55:18 DBG] Connection id "0HNDO31EH786T", Request id "0HNDO31EH786T:00000001": started reading request body.
+[22:55:18 DBG] Connection id "0HNDO31EH786T", Request id "0HNDO31EH786T:00000001": done reading request body.
+[22:55:18 DBG] JSON input formatter succeeded, deserializing to type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'
+[22:55:18 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:55:18 DBG] Done attempting to bind parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:55:18 DBG] Attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput' ...
+[22:55:18 DBG] Done attempting to validate the bound parameter 'input' of type 'TelehealthApi.Api.Controllers.PatientsController+PatientInput'.
+[22:55:18 INF] Attempting to create patient for email reggy@cuteandugly.com by user kamuzonde@bugsbunny.com from IP ::1
+[22:55:19 DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+[22:55:19 DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+[22:55:20 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:55:20 DBG] Compiling query expression: 
+'DbSet<Patient>()
+    .Where(p => p.Email == __input_Email_0)'
+[22:55:21 DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Patient>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Patient.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Patient.Email (string) Required Index, 1], [Property: Patient.EncryptedName (string) Required, 2], [Property: Patient.FhirPatientId (string) Required Index, 3], [Property: Patient.UserId (string), 4] }
+        SELECT p.Id, p.Email, p.EncryptedName, p.FhirPatientId, p.UserId
+        FROM Patients AS p
+        WHERE p.Email == @__input_Email_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Patient>, 
+    TelehealthApi.Core.TelehealthDbContext, 
+    False, 
+    False, 
+    True
+)'
+[22:55:21 DBG] Creating DbConnection.
+[22:55:21 DBG] Created DbConnection. (55ms).
+[22:55:21 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:24 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:24 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:55:25 DBG] Created DbCommand for 'ExecuteReader' (10ms).
+[22:55:25 DBG] Initialized DbCommand for 'ExecuteReader' (43ms).
+[22:55:25 DBG] Executing DbCommand [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:55:25 INF] Executed DbCommand (586ms) [Parameters=[@__input_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[Email] = @__input_Email_0
+[22:55:25 DBG] Context 'TelehealthDbContext' started tracking 'Patient' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:55:25 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:25 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 97ms reading results.
+[22:55:25 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:25 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (7ms).
+[22:55:26 INF] Potential duplicate email detected for: reggy@cuteandugly.com
+[22:55:26 DBG] Debug: Local matches count 1, FHIR matches count 1 for email reggy@cuteandugly.com
+[22:55:26 DBG] Entity Framework Core 8.0.16 initialized 'TelehealthDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.16' with options: None
+[22:55:26 DBG] Context 'TelehealthDbContext' started tracking 'AuditLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:55:26 DBG] SaveChanges starting for 'TelehealthDbContext'.
+[22:55:26 DBG] DetectChanges starting for 'TelehealthDbContext'.
+[22:55:26 DBG] DetectChanges completed for 'TelehealthDbContext'.
+[22:55:27 DBG] Creating DbConnection.
+[22:55:27 DBG] Created DbConnection. (1ms).
+[22:55:27 DBG] Opening connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] Opened connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] Creating DbCommand for 'ExecuteReader'.
+[22:55:27 DBG] Created DbCommand for 'ExecuteReader' (1ms).
+[22:55:27 DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+[22:55:27 DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:55:27 INF] Executed DbCommand (414ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[22:55:27 DBG] Closing data reader to 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] A data reader for 'TelehealthDb' on server 'plesk8200.is.cc' is being disposed after spending 28ms reading results.
+[22:55:27 DBG] Closing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] Closed connection to database 'TelehealthDb' on server 'plesk8200.is.cc' (6ms).
+[22:55:27 DBG] An entity of type 'AuditLog' tracked by 'TelehealthDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+[22:55:27 DBG] SaveChanges completed for 'TelehealthDbContext' with 1 entities written to the database.
+[22:55:27 DBG] 'TelehealthDbContext' disposed.
+[22:55:27 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] Disposed connection to database '' on server '' (3ms).
+[22:55:27 DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+[22:55:27 DBG] No information found on request to perform content negotiation.
+[22:55:27 DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+[22:55:27 DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+[22:55:27 DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+[22:55:27 INF] Executing ConflictObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType6`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], TelehealthApi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[22:55:27 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 10156.2728ms
+[22:55:27 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[22:55:27 DBG] Connection id "0HNDO31EH786T" completed keep alive response.
+[22:55:27 DBG] 'TelehealthDbContext' disposed.
+[22:55:27 DBG] Disposing connection to database 'TelehealthDb' on server 'plesk8200.is.cc'.
+[22:55:27 DBG] Disposed connection to database '' on server '' (3ms).
+[22:55:27 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 409 null application/json; charset=utf-8 10733.6835ms
+[23:29:59 DBG] Connection id "0HNDO31EH786R" received FIN.
+[23:29:59 DBG] Connection id "0HNDO31EH786R" is closed. The last processed stream ID was 7.
+[23:29:59 DBG] Connection id "0HNDO31EH786R" sending FIN because: "The Socket transport's send loop completed gracefully."
+[23:29:59 DBG] The connection queue processing loop for 0HNDO31EH786R completed.
+[23:29:59 DBG] Connection id "0HNDO31EH786R" stopped.

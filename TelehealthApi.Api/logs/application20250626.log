@@ -1,0 +1,438 @@
+[06:08:55 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[06:08:56 INF] Now listening on: https://localhost:7164
+[06:08:56 INF] Now listening on: http://localhost:5141
+[06:08:59 INF] Application started. Press Ctrl+C to shut down.
+[06:09:00 INF] Hosting environment: Development
+[06:09:01 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[06:09:01 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[06:09:04 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 3130.8637ms
+[06:09:04 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[06:09:04 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[06:09:04 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 77.9334ms
+[06:09:05 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 215.5074ms
+[06:09:05 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[06:09:05 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 318.0471ms
+[06:09:15 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[06:09:15 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 29.7814ms
+[06:09:20 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[06:09:20 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.9694ms
+[06:27:51 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/cleanup-null-users - null null
+[06:27:52 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[06:27:52 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[06:27:56 INF] Attempting to delete patient cleanup-null-users by user ngani@medicentre.com from IP ::1
+[06:28:05 INF] Executed DbCommand (879ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[06:28:08 INF] Successfully deleted FHIR patient cleanup-null-users from FHIR server by user ngani@medicentre.com
+[06:28:08 WRN] Local patient record for FHIR ID cleanup-null-users not found during deletion, but FHIR patient was deleted.
+[06:28:09 INF] Executed DbCommand (331ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[06:28:09 INF] Executed DbCommand (322ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[06:28:10 INF] Deleted patient cleanup-null-users by user ngani@medicentre.com
+[06:28:10 INF] Executing StatusCodeResult, setting HTTP status code 204
+[06:28:10 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 17497.5401ms
+[06:28:10 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[06:28:10 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/cleanup-null-users - 204 null null 18999.5488ms
+[08:51:31 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[08:51:31 INF] Now listening on: https://localhost:7164
+[08:51:31 INF] Now listening on: http://localhost:5141
+[08:51:33 INF] Application started. Press Ctrl+C to shut down.
+[08:51:33 INF] Hosting environment: Development
+[08:51:33 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[08:51:33 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[08:51:34 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 734.476ms
+[08:51:34 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[08:51:34 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[08:51:34 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 97.9329ms
+[08:51:35 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 253.5141ms
+[08:51:35 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[08:51:35 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.9922ms
+[08:53:26 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/cleanup-null-users - null null
+[08:53:27 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CleanupNullUsers (TelehealthApi.Api)'
+[08:53:27 INF] Route matched with {action = "CleanupNullUsers", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CleanupNullUsers() on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[08:53:33 INF] Executed DbCommand (611ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[UserId] IS NULL
+[08:53:35 INF] Executed DbCommand (399ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:35 INF] Executed DbCommand (326ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:36 INF] Executed DbCommand (311ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:36 INF] Executed DbCommand (319ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:36 INF] Executed DbCommand (319ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:37 INF] Executed DbCommand (311ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:37 INF] Executed DbCommand (315ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:37 INF] Executed DbCommand (328ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:38 INF] Executed DbCommand (311ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:38 INF] Executed DbCommand (313ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:38 INF] Executed DbCommand (328ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:39 INF] Executed DbCommand (313ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:39 INF] Executed DbCommand (314ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:39 INF] Executed DbCommand (320ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:40 INF] Executed DbCommand (313ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[08:53:40 INF] Executed DbCommand (343ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p1;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p2;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p3;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p4;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p5;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p6;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p7;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p8;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p9;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p10;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p11;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p12;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p13;
+DELETE FROM [Patients]
+OUTPUT 1
+WHERE [Id] = @p14;
+[08:53:41 INF] Deleted 15 records.
+[08:53:41 INF] Executing OkObjectResult, writing value of type 'TelehealthApi.Core.TelehealthDbContext+DeletionResult'.
+[08:53:41 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CleanupNullUsers (TelehealthApi.Api) in 14018.5943ms
+[08:53:41 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CleanupNullUsers (TelehealthApi.Api)'
+[08:53:41 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/cleanup-null-users - 200 null application/json; charset=utf-8 14444.8122ms
+[12:58:47 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:58:48 INF] Now listening on: https://localhost:7164
+[12:58:48 INF] Now listening on: http://localhost:5141
+[12:58:49 INF] Application started. Press Ctrl+C to shut down.
+[12:58:50 INF] Hosting environment: Development
+[12:58:50 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[12:58:50 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:09:30 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:09:30 INF] Now listening on: https://localhost:7164
+[13:09:30 INF] Now listening on: http://localhost:5141
+[13:09:30 INF] Application started. Press Ctrl+C to shut down.
+[13:09:30 INF] Hosting environment: Development
+[13:09:30 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:09:32 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:09:33 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 761.2713ms
+[13:09:33 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:09:33 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:09:33 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 95.5302ms
+[13:09:33 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 211.7382ms
+[13:09:34 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:09:34 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 68.6359ms
+[13:09:35 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:09:35 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 6.6244ms
+[13:09:39 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:09:39 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 12.3484ms
+[13:09:40 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:09:40 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.6684ms
+[13:11:18 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - null null
+[13:11:18 INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 17:14:15', Current time (UTC): '26/6/2025 11:11:18'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[13:11:18 INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 17:14:15', Current time (UTC): '26/6/2025 11:11:18'.
+[13:11:18 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+[13:11:18 INF] AuthenticationScheme: Bearer was challenged.
+[13:11:18 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - 401 0 null 303.5279ms
+[13:11:32 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - null null
+[13:11:32 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[13:11:32 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:11:34 INF] Attempting to retrieve patient 48027797 by user ngani@medicentre.com from IP ::1
+[13:11:35 INF] Successfully retrieved patient 48027797
+[13:11:41 INF] Executed DbCommand (433ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:11:41 INF] Successfully accessed patient 48027797 by user ngani@medicentre.com
+[13:11:41 INF] Executing OkObjectResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[13:11:41 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 9137.0621ms
+[13:11:41 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[13:11:41 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/48027797 - 200 null application/json; charset=utf-8 9331.1983ms
+[13:12:10 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - null null
+[13:12:10 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:12:10 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:12:10 INF] Attempting to delete patient 2 by user ngani@medicentre.com from IP ::1
+[13:12:11 INF] Executed DbCommand (349ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[13:12:11 INF] Successfully deleted patient 2
+[13:12:11 INF] Successfully deleted FHIR patient 2 from FHIR server by user ngani@medicentre.com
+[13:12:11 WRN] Local patient record for FHIR ID 2 not found during deletion, but FHIR patient was deleted.
+[13:12:12 INF] Executed DbCommand (344ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:12:12 INF] Executed DbCommand (318ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:12:12 INF] Deleted patient 2 by user ngani@medicentre.com
+[13:12:12 INF] Executing StatusCodeResult, setting HTTP status code 204
+[13:12:12 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 2215.2693ms
+[13:12:12 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:12:12 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - 204 null null 2255.6843ms
+[13:30:55 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:30:56 INF] Now listening on: https://localhost:7164
+[13:30:56 INF] Now listening on: http://localhost:5141
+[13:30:56 INF] Application started. Press Ctrl+C to shut down.
+[13:30:56 INF] Hosting environment: Development
+[13:30:56 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:30:58 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:30:59 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 691.4679ms
+[13:30:59 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:30:59 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 50.9331ms
+[13:30:59 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:31:00 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 233.0986ms
+[13:31:00 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:31:00 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 147.6083ms
+[13:31:03 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:31:03 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 9.3108ms
+[13:31:06 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:31:06 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.0869ms
+[13:34:13 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:34:14 INF] Now listening on: https://localhost:7164
+[13:34:14 INF] Now listening on: http://localhost:5141
+[13:34:14 INF] Application started. Press Ctrl+C to shut down.
+[13:34:14 INF] Hosting environment: Development
+[13:34:14 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:34:16 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:34:17 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 789.7986ms
+[13:34:17 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:34:17 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:34:17 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 81.0371ms
+[13:34:17 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 196.436ms
+[13:34:18 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:34:18 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.573ms
+[13:34:31 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - null null
+[13:34:31 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:34:31 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:34:32 INF] Attempting to delete patient 2 by user ngani@medicentre.com from IP ::1
+[13:34:37 INF] Executed DbCommand (456ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[13:34:38 INF] Successfully deleted patient 2
+[13:34:38 INF] Successfully deleted FHIR patient 2 from FHIR server by user ngani@medicentre.com
+[13:34:38 WRN] Local patient record for FHIR ID 2 not found during deletion, but FHIR patient was deleted.
+[13:34:38 INF] Executed DbCommand (406ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:34:39 INF] Executed DbCommand (323ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:34:39 INF] Deleted patient 2 by user ngani@medicentre.com
+[13:34:39 INF] Executing StatusCodeResult, setting HTTP status code 204
+[13:34:39 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 8017.3126ms
+[13:34:39 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:34:39 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - 204 null null 8391.2961ms
+[13:41:06 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:41:07 INF] Now listening on: https://localhost:7164
+[13:41:07 INF] Now listening on: http://localhost:5141
+[13:41:07 INF] Application started. Press Ctrl+C to shut down.
+[13:41:09 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:41:09 INF] Hosting environment: Development
+[13:41:09 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:41:10 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 876.3719ms
+[13:41:10 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:41:10 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 70.3622ms
+[13:41:10 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:41:10 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 167.0146ms
+[13:41:10 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:41:10 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.3894ms
+[13:41:13 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:41:13 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 8.446ms
+[13:41:15 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:41:15 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.2111ms
+[13:41:39 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - null null
+[13:41:40 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:41:40 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:41:41 INF] Attempting to delete patient 2 by user ngani@medicentre.com from IP ::1
+[13:41:47 INF] Executed DbCommand (527ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[13:41:48 INF] Successfully deleted patient 2
+[13:41:48 INF] Successfully deleted FHIR patient 2 from FHIR server by user ngani@medicentre.com
+[13:41:48 WRN] Local patient record for FHIR ID 2 not found during deletion, but FHIR patient was deleted.
+[13:41:49 INF] Executed DbCommand (370ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:41:49 INF] Executed DbCommand (324ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:41:49 INF] Deleted patient 2 by user ngani@medicentre.com
+[13:41:49 INF] Executing StatusCodeResult, setting HTTP status code 204
+[13:41:49 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 9410.4188ms
+[13:41:49 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:41:49 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - 204 null null 9837.7395ms
+[13:57:51 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:57:52 INF] Now listening on: https://localhost:7164
+[13:57:52 INF] Now listening on: http://localhost:5141
+[13:57:52 INF] Application started. Press Ctrl+C to shut down.
+[13:57:53 INF] Hosting environment: Development
+[13:57:53 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[13:57:54 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[13:57:56 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[13:57:56 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1318.7774ms
+[13:57:56 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 169.9991ms
+[13:57:56 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[13:57:57 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 446.0025ms
+[13:57:57 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[13:57:57 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 185.2262ms
+[13:59:41 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - null null
+[13:59:41 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:59:41 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[13:59:42 INF] Attempting to delete patient 2 by user ngani@medicentre.com from IP ::1
+[13:59:49 INF] Executed DbCommand (589ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[13:59:51 WRN] Attempted to delete non-existent patient 2
+[13:59:52 INF] Executed DbCommand (345ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[13:59:52 ERR] Failed to delete FHIR patient 2 on FHIR server by user ngani@medicentre.com Reason: Patient not found
+[13:59:52 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[13:59:52 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 11086.7251ms
+[13:59:53 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[13:59:53 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - 404 null text/plain; charset=utf-8 12172.3859ms
+[14:19:01 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[14:19:02 INF] Now listening on: https://localhost:7164
+[14:19:02 INF] Now listening on: http://localhost:5141
+[14:19:03 INF] Application started. Press Ctrl+C to shut down.
+[14:19:04 INF] Hosting environment: Development
+[14:19:04 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[14:19:04 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[14:19:05 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1433.5568ms
+[14:19:06 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[14:19:06 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[14:19:06 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 57.5146ms
+[14:19:06 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 268.5298ms
+[14:19:06 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[14:19:06 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 147.4025ms
+[14:20:05 INF] Request starting HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - null null
+[14:20:05 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[14:20:06 INF] Route matched with {action = "DeletePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeletePatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[14:20:07 INF] Attempting to delete patient 2 by user ngani@medicentre.com from IP ::1
+[14:20:13 INF] Executed DbCommand (556ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Email], [p].[EncryptedName], [p].[FhirPatientId], [p].[UserId]
+FROM [Patients] AS [p]
+WHERE [p].[FhirPatientId] = @__id_0
+[14:20:15 WRN] Attempted to delete non-existent patient 2
+[14:20:15 INF] Executed DbCommand (336ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[14:20:15 ERR] Failed to delete FHIR patient 2 on FHIR server by user ngani@medicentre.com Reason: Patient not found
+[14:20:15 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[14:20:15 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api) in 9778.5134ms
+[14:20:15 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.DeletePatient (TelehealthApi.Api)'
+[14:20:15 INF] Request finished HTTP/1.1 DELETE https://localhost:7164/api/Patients/2 - 404 null text/plain; charset=utf-8 10438.9903ms

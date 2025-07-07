@@ -1,0 +1,14 @@
+[20:32:37 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[20:32:37 INF] Now listening on: https://localhost:7164
+[20:32:37 INF] Now listening on: http://localhost:5141
+[20:32:37 INF] Application started. Press Ctrl+C to shut down.
+[20:32:37 INF] Hosting environment: Development
+[20:32:37 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[20:32:40 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[20:32:41 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 685.0085ms
+[20:32:41 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[20:32:41 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:32:41 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 24.1668ms
+[20:32:41 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 172.7976ms
+[20:32:42 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:32:42 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.7518ms

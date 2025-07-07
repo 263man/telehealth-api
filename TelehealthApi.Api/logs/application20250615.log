@@ -1,0 +1,304 @@
+[19:04:57 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[19:04:58 INF] Now listening on: https://localhost:7164
+[19:04:58 INF] Now listening on: http://localhost:5141
+[19:04:58 INF] Application started. Press Ctrl+C to shut down.
+[19:04:59 INF] Hosting environment: Development
+[19:05:01 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[19:05:04 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[19:05:05 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 938.1383ms
+[19:05:06 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[19:05:06 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[19:05:06 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 162.1181ms
+[19:05:07 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 372.9577ms
+[19:05:07 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[19:05:07 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.23ms
+[19:07:22 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/8 - null null
+[19:07:23 INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '8/6/2025 17:16:51', Current time (UTC): '15/6/2025 17:07:23'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[19:07:23 INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '8/6/2025 17:16:51', Current time (UTC): '15/6/2025 17:07:23'.
+[19:07:23 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+[19:07:23 INF] AuthenticationScheme: Bearer was challenged.
+[19:07:23 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/8 - 401 0 null 1488.0795ms
+[19:13:05 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/register - application/json 150
+[19:13:05 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[19:13:05 INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(TelehealthApi.Api.Controllers.RegisterModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[19:13:06 INF] Attempting to register user with email: kimberly@saynts.com, FirstName: Kimberly, LastName: Shilongo
+[19:13:17 INF] Executed DbCommand (1,030ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[19:13:19 INF] Executed DbCommand (630ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[19:13:20 INF] Executed DbCommand (684ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+[19:13:20 INF] User kimberly@saynts.com registered successfully.
+[19:13:20 INF] Executing OkObjectResult, writing value of type 'System.String'.
+[19:13:20 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api) in 15427.016ms
+[19:13:20 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Register (TelehealthApi.Api)'
+[19:13:20 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/register - 200 null text/plain; charset=utf-8 15774.8461ms
+[19:14:13 INF] Request starting HTTP/2 POST https://localhost:7164/api/Account/login - application/json 63
+[19:14:13 INF] Executing endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[19:14:13 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(TelehealthApi.Api.Controllers.LoginModel) on controller TelehealthApi.Api.Controllers.AccountController (TelehealthApi.Api).
+[19:14:13 INF] Attempting to log in user with email: kimberly@saynts.com
+[19:14:14 INF] Executed DbCommand (671ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[19:14:15 INF] Executed DbCommand (620ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[19:14:15 INF] User kimberly@saynts.com logged in successfully. Token generated.
+[19:14:15 INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[19:14:15 INF] Executed action TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api) in 2423.9183ms
+[19:14:15 INF] Executed endpoint 'TelehealthApi.Api.Controllers.AccountController.Login (TelehealthApi.Api)'
+[19:14:15 INF] Request finished HTTP/2 POST https://localhost:7164/api/Account/login - 200 null application/json; charset=utf-8 2508.3775ms
+[19:15:12 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/8 - null null
+[19:15:12 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:15:12 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[19:15:14 INF] Attempting to retrieve patient 8 by user kimberly@saynts.com from IP ::1
+[19:15:18 INF] Executed DbCommand (630ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[19:15:18 WRN] Failed to retrieve patient 8: Not Found for user kimberly@saynts.com
+[19:15:18 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[19:15:18 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 5939.2135ms
+[19:15:18 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:15:18 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/8 - 404 null text/plain; charset=utf-8 6062.6498ms
+[19:19:32 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[19:19:32 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:19:32 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[19:19:32 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[19:19:38 INF] Executed DbCommand (817ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[19:19:38 WRN] Failed to retrieve patient 1: Not Found for user kimberly@saynts.com
+[19:19:38 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[19:19:38 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 6566.277ms
+[19:19:38 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:19:38 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 404 null text/plain; charset=utf-8 6701.48ms
+[19:20:15 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[19:20:15 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:20:15 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[19:20:15 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[19:20:19 INF] Executed DbCommand (695ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[19:20:19 WRN] Failed to retrieve patient 1: Not Found for user kimberly@saynts.com
+[19:20:19 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[19:20:19 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 3056.7211ms
+[19:20:19 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:20:19 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 404 null text/plain; charset=utf-8 3102.8309ms
+[19:20:56 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[19:20:56 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:20:56 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[19:20:56 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[19:20:57 ERR] An unexpected error occurred while retrieving patient 1 by user kimberly@saynts.com from IP ::1
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ReceiveAsync(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.ReceiveAsync(Memory`1 buffer, SocketFlags socketFlags, Boolean fromNetworkStream, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1.SetResult(TResult result)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1.SetResult(TResult result)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Hl7.Fhir.Rest.HttpClientRequester.ExecuteAsync(HttpRequestMessage message, CancellationToken ct)
+   at Hl7.Fhir.Rest.BaseFhirClient.executeAsync[TResource](Bundle tx, IEnumerable`1 expect, Nullable`1 ct)
+   at TelehealthApi.Core.Services.FhirService.GetPatientAsync(String id) in C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Core\Services\FhirService.cs:line 28
+   at TelehealthApi.Api.Controllers.PatientsController.GetPatient(String id) in C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api\Controllers\PatientsController.cs:line 48
+[19:20:58 INF] Executed DbCommand (639ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[19:20:58 INF] Executing ObjectResult, writing value of type 'System.String'.
+[19:20:58 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 2702.1854ms
+[19:20:59 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[19:20:59 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 500 null text/plain; charset=utf-8 3009.5854ms
+[20:00:57 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[20:01:08 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[20:01:09 INF] Now listening on: https://localhost:7164
+[20:01:09 INF] Now listening on: http://localhost:5141
+[20:01:09 INF] Application started. Press Ctrl+C to shut down.
+[20:01:11 INF] Hosting environment: Development
+[20:01:11 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[20:01:11 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[20:01:12 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 799.2217ms
+[20:01:13 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:01:13 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[20:01:13 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 92.1566ms
+[20:01:13 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 250.5752ms
+[20:01:13 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:01:13 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.484ms
+[20:01:30 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[20:01:30 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 10.1753ms
+[20:01:37 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[20:01:37 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.2642ms
+[21:03:21 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[21:03:21 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:03:21 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:03:25 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[21:03:33 INF] Executed DbCommand (552ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:03:33 WRN] Failed to retrieve patient 1: Not Found for user kimberly@saynts.com
+[21:03:34 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[21:03:34 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 11572.3532ms
+[21:03:34 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:03:34 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 404 null text/plain; charset=utf-8 12768.0849ms
+[21:04:17 INF] User profile is available. Using 'C:\Users\Farai C Kepekepe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[21:04:18 INF] Now listening on: https://localhost:7164
+[21:04:18 INF] Now listening on: http://localhost:5141
+[21:04:18 INF] Application started. Press Ctrl+C to shut down.
+[21:04:18 INF] Hosting environment: Development
+[21:04:18 INF] Content root path: C:\Users\Farai C Kepekepe\source\repos\TelehealthApi\TelehealthApi.Api
+[21:04:20 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/index.html - null null
+[21:04:21 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/index.html - 200 null text/html;charset=utf-8 1082.6168ms
+[21:04:21 INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+[21:04:21 INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 50.2169ms
+[21:04:21 INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+[21:04:22 INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 485.1555ms
+[21:04:22 INF] Request starting HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - null null
+[21:04:22 INF] Request finished HTTP/2 GET https://localhost:7164/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.0956ms
+[21:04:43 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[21:04:43 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:04:43 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:04:45 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[21:04:54 INF] Executed DbCommand (604ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:04:54 WRN] Failed to retrieve patient 1: Not Found for user kimberly@saynts.com
+[21:04:54 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[21:04:54 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 10728.1103ms
+[21:04:54 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:04:54 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 404 null text/plain; charset=utf-8 11431.182ms
+[21:31:02 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/7 - null null
+[21:31:02 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:31:02 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:31:02 INF] Attempting to retrieve patient 7 by user kimberly@saynts.com from IP ::1
+[21:31:05 INF] Executed DbCommand (480ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:31:05 WRN] Failed to retrieve patient 7: Not Found for user kimberly@saynts.com
+[21:31:06 INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+[21:31:06 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 3245.9091ms
+[21:31:06 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:31:06 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/7 - 404 null text/plain; charset=utf-8 3777.3669ms
+[21:32:33 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 112
+[21:32:33 INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '8/6/2025 17:16:51', Current time (UTC): '15/6/2025 19:32:33'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[21:32:33 INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '8/6/2025 17:16:51', Current time (UTC): '15/6/2025 19:32:33'.
+[21:32:33 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+[21:32:33 INF] AuthenticationScheme: Bearer was challenged.
+[21:32:33 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 401 0 null 172.2437ms
+[21:33:14 INF] Request starting HTTP/1.1 POST https://localhost:7164/api/Patients - application/json 112
+[21:33:14 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[21:33:14 INF] Route matched with {action = "CreatePatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePatient(PatientInput) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:33:14 INF] Attempting to create patient for email gugu@tinder.com by user kimberly@saynts.com from IP ::1
+[21:33:16 INF] Executed DbCommand (342ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([Id], [Email], [EncryptedName], [FhirPatientId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[21:33:17 INF] Executed DbCommand (505ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:33:17 INF] Created patient 1 with local ID "5b07ed20-8ef4-49cd-82b0-5b058665129d" by user kimberly@saynts.com
+[21:33:17 INF] Executing CreatedAtActionResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[21:33:17 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api) in 3058.3338ms
+[21:33:17 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.CreatePatient (TelehealthApi.Api)'
+[21:33:17 INF] Request finished HTTP/1.1 POST https://localhost:7164/api/Patients - 201 null application/json; charset=utf-8 3154.1558ms
+[21:33:33 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/1 - null null
+[21:33:33 INF] Executing endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:33:33 INF] Route matched with {action = "GetPatient", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPatient(System.String) on controller TelehealthApi.Api.Controllers.PatientsController (TelehealthApi.Api).
+[21:33:33 INF] Attempting to retrieve patient 1 by user kimberly@saynts.com from IP ::1
+[21:33:34 INF] Executed DbCommand (338ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [telehealthkeps].[AuditLogs] ([Id], [Action], [Details], [ResourceId], [ResourceType], [Timestamp], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[21:33:34 INF] Successfully accessed patient 1 by user kimberly@saynts.com
+[21:33:34 INF] Executing OkObjectResult, writing value of type 'Hl7.Fhir.Model.Patient'.
+[21:33:34 INF] Executed action TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api) in 671.9785ms
+[21:33:34 INF] Executed endpoint 'TelehealthApi.Api.Controllers.PatientsController.GetPatient (TelehealthApi.Api)'
+[21:33:34 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/1 - 200 null application/json; charset=utf-8 773.8609ms
+[21:37:05 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients - null null
+[21:37:05 INF] Executing endpoint '405 HTTP Method Not Supported'
+[21:37:05 INF] Executed endpoint '405 HTTP Method Not Supported'
+[21:37:05 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients - 405 0 null 65.0637ms
+[21:37:14 INF] Request starting HTTP/1.1 GET https://localhost:7164/api/Patients/ - null null
+[21:37:14 INF] Executing endpoint '405 HTTP Method Not Supported'
+[21:37:14 INF] Executed endpoint '405 HTTP Method Not Supported'
+[21:37:14 INF] Request finished HTTP/1.1 GET https://localhost:7164/api/Patients/ - 405 0 null 49.7732ms
