@@ -1,0 +1,124 @@
+@page "/patient-onboard"
+@using System.Net.Http.Json
+@inject IHttpClientFactory HttpClientFactory
+
+<PageTitle>Patient Onboard</PageTitle>
+
+<div class="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Onboard New Patient</h2>
+
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-lg">
+                <span class="font-semibold">Error:</span> @ErrorMessage
+            </div>
+        }
+
+        @if (isSubmitting)
+        {
+            <div class="flex justify-center mb-6">
+                <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600"></div>
+            </div>
+        }
+
+        <EditForm Model="patient" OnValidSubmit="HandleValidSubmit" class="space-y-6">
+            <DataAnnotationsValidator />
+            <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                <InputText id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" @bind-Value="patient.FirstName" required />
+                <ValidationMessage For="@(() => patient.FirstName)" class="text-red-600 text-sm mt-1" />
+            </div>
+            <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                <InputText id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" @bind-Value="patient.LastName" required />
+                <ValidationMessage For="@(() => patient.LastName)" class="text-red-600 text-sm mt-1" />
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <InputText id="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" @bind-Value="patient.Email" required />
+                <ValidationMessage For="@(() => patient.Email)" class="text-red-600 text-sm mt-1" />
+            </div>
+            <div>
+                <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-1">Birth Date (YYYY-MM-DD)</label>
+                <InputText id="birthDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" @bind-Value="patient.BirthDate" required pattern="^\d{4}-\d{2}-\d{2}$" />
+                <ValidationMessage For="@(() => patient.BirthDate)" class="text-red-600 text-sm mt-1" />
+            </div>
+            <div>
+                <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <InputText id="phoneNumber" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" @bind-Value="patient.PhoneNumber" required />
+                <ValidationMessage For="@(() => patient.PhoneNumber)" class="text-red-600 text-sm mt-1" />
+            </div>
+            <button type="submit" disabled="@isSubmitting" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition-colors duration-200 disabled:bg-blue-400 disabled:cursor-not-allowed">Securely Onboard Patient</button>
+        </EditForm>
+    </div>
+</div>
+
+@if (fhirPatient != null)
+{
+    <div class="max-w-md w-full mx-auto mt-8 p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+        <h3 class="text-2xl font-semibold text-gray-900 text-center mb-4">FHIR Patient Resource</h3>
+        <pre class="bg-gray-50 p-4 rounded-md text-sm text-gray-800 overflow-x-auto border border-gray-200">
+    @fhirPatientJson
+            </pre>
+    </div>
+}
+
+@code {
+    private PatientCreateRequest patient = new();
+    private FhirPatientDisplay? fhirPatient;
+    private string? fhirPatientJson;
+    private string? ErrorMessage;
+    private bool isSubmitting;
+
+    private async Task HandleValidSubmit()
+    {
+        ErrorMessage = null;
+        fhirPatient = null;
+        fhirPatientJson = null;
+        isSubmitting = true;
+
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("PatientOnboard");
+            var response = await httpClient.PostAsJsonAsync("/api/patients", patient);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<FhirPatientDisplay>();
+                fhirPatient = result;
+                fhirPatientJson = System.Text.Json.JsonSerializer.Serialize(result, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                ErrorMessage = $"Failed to onboard patient: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    public class PatientCreateRequest
+    {
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string BirthDate { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+    }
+
+    public class FhirPatientDisplay
+    {
+        public string? FhirPatientId { get; set; }
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public string? BirthDate { get; set; }
+        public string? PhoneNumber { get; set; }
+    }
+}
