@@ -1,0 +1,192 @@
+Folder PATH listing
+Volume serial number is D6B6-C5F7
+C:.
+|   appsettings.Development.json
+|   appsettings.json
+|   FileStructure.txt
+|   Program.cs
+|   TelehealthApi.Web.csproj
+|   TelehealthApi.Web.csproj.user
+|   
++---bin
+|   \---Debug
+|       \---net8.0
+|           \---runtimes
+|               +---unix
+|               |   \---lib
+|               |       \---net6.0
+|               +---win
+|               |   \---lib
+|               |       \---net6.0
+|               +---win-arm
+|               |   \---native
+|               +---win-arm64
+|               |   \---native
+|               +---win-x64
+|               |   \---native
+|               \---win-x86
+|                   \---native
++---Components
+|   |   App.razor
+|   |   Routes.razor
+|   |   _Imports.razor
+|   |   
+|   +---Layout
+|   |       MainLayout.razor
+|   |       MainLayout.razor.css
+|   |       NavMenu.razor
+|   |       NavMenu.razor.css
+|   |       
+|   \---Pages
+|           Error.razor
+|           Home.razor
+|           PatientOnboard.razor
+|           Patients.razor
+|           _Host.cshtml
+|           _Host.cshtml.cs
+|           
++---obj
+|   |   project.assets.json
+|   |   project.nuget.cache
+|   |   TelehealthApi.Web.csproj.nuget.dgspec.json
+|   |   TelehealthApi.Web.csproj.nuget.g.props
+|   |   TelehealthApi.Web.csproj.nuget.g.targets
+|   |   
+|   \---Debug
+|       \---net8.0
+|           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|           |   ApiEndpoints.json
+|           |   apphost.exe
+|           |   rpswa.dswa.cache.json
+|           |   staticwebassets.references.upToDateCheck.txt
+|           |   staticwebassets.removed.txt
+|           |   TelehealthApi.Web.assets.cache
+|           |   TelehealthApi.Web.csproj.AssemblyReference.cache
+|           |   TelehealthApi.Web.csproj.BuildWithSkipAnalyzers
+|           |   TelehealthApi.Web.csproj.FileListAbsolute.txt
+|           |   TelehealthApi.Web.GlobalUsings.g.cs
+|           |   
+|           +---ref
+|           +---refint
+|           +---scopedcss
+|           |   +---bundle
+|           |   +---Components
+|           |   |   \---Layout
+|           |   \---projectbundle
+|           \---staticwebassets
++---Properties
+|       launchSettings.json
+|       
++---TestBlazorServer
+|   |   App.razor
+|   |   appsettings.Development.json
+|   |   appsettings.json
+|   |   Program.cs
+|   |   TestBlazorServer.csproj
+|   |   TestBlazorServer.sln
+|   |   _Imports.razor
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       +---net6.0
+|   |       \---net8.0
+|   +---Data
+|   |       WeatherForecast.cs
+|   |       WeatherForecastService.cs
+|   |       
+|   +---obj
+|   |   |   project.assets.json
+|   |   |   project.nuget.cache
+|   |   |   TestBlazorServer.csproj.nuget.dgspec.json
+|   |   |   TestBlazorServer.csproj.nuget.g.props
+|   |   |   TestBlazorServer.csproj.nuget.g.targets
+|   |   |   
+|   |   \---Debug
+|   |       +---net6.0
+|   |       |   |   .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+|   |       |   |   rpswa.dswa.cache.json
+|   |       |   |   staticwebassets.removed.txt
+|   |       |   |   TestBlazorServer.AssemblyInfo.cs
+|   |       |   |   TestBlazorServer.AssemblyInfoInputs.cache
+|   |       |   |   TestBlazorServer.assets.cache
+|   |       |   |   TestBlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+|   |       |   |   TestBlazorServer.GlobalUsings.g.cs
+|   |       |   |   TestBlazorServer.RazorAssemblyInfo.cache
+|   |       |   |   TestBlazorServer.RazorAssemblyInfo.cs
+|   |       |   |   
+|   |       |   +---ref
+|   |       |   +---refint
+|   |       |   \---staticwebassets
+|   |       \---net8.0
+|   |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|   |           |   rpswa.dswa.cache.json
+|   |           |   staticwebassets.removed.txt
+|   |           |   TestBlazorServer.AssemblyInfo.cs
+|   |           |   TestBlazorServer.AssemblyInfoInputs.cache
+|   |           |   TestBlazorServer.assets.cache
+|   |           |   TestBlazorServer.csproj.AssemblyReference.cache
+|   |           |   TestBlazorServer.csproj.CoreCompileInputs.cache
+|   |           |   TestBlazorServer.csproj.FileListAbsolute.txt
+|   |           |   TestBlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+|   |           |   TestBlazorServer.GlobalUsings.g.cs
+|   |           |   TestBlazorServer.MvcApplicationPartsAssemblyInfo.cache
+|   |           |   TestBlazorServer.RazorAssemblyInfo.cache
+|   |           |   TestBlazorServer.RazorAssemblyInfo.cs
+|   |           |   TestBlazorServer.sourcelink.json
+|   |           |   
+|   |           +---ref
+|   |           +---refint
+|   |           \---staticwebassets
+|   +---Pages
+|   |       Counter.razor
+|   |       Error.cshtml
+|   |       Error.cshtml.cs
+|   |       FetchData.razor
+|   |       Index.razor
+|   |       _Host.cshtml
+|   |       _Layout.cshtml
+|   |       
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Shared
+|   |       MainLayout.razor
+|   |       MainLayout.razor.css
+|   |       NavMenu.razor
+|   |       NavMenu.razor.css
+|   |       SurveyPrompt.razor
+|   |       
+|   \---wwwroot
+|       |   favicon.ico
+|       |   
+|       \---css
+|           |   site.css
+|           |   
+|           +---bootstrap
+|           |       bootstrap.min.css
+|           |       bootstrap.min.css.map
+|           |       
+|           \---open-iconic
+|               |   FONT-LICENSE
+|               |   ICON-LICENSE
+|               |   README.md
+|               |   
+|               \---font
+|                   +---css
+|                   |       open-iconic-bootstrap.min.css
+|                   |       
+|                   \---fonts
+|                           open-iconic.eot
+|                           open-iconic.otf
+|                           open-iconic.svg
+|                           open-iconic.ttf
+|                           open-iconic.woff
+|                           
+\---wwwroot
+    |   app.css
+    |   favicon.png
+    |   
+    \---bootstrap
+            bootstrap.min.css
+            bootstrap.min.css.map
+            

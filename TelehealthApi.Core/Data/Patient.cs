@@ -1,5 +1,4 @@
-﻿using Hl7.Fhir.Model;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TelehealthApi.Core.Data
 {
@@ -18,9 +17,6 @@ namespace TelehealthApi.Core.Data
         // Encrypted patient name for local storage, adhering to PHI best practices
         [Required]
         public string EncryptedName { get; set; } = string.Empty;
-
-        // Navigation property for related Appointments
-        public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
         // Link to the ASP.NET Core Identity user (optional, but good for direct linkage)
         // This is how we connect our Patient entity to the IdentityUser for login

@@ -18,5 +18,9 @@ namespace TelehealthApi.Core.Data
         public DateTime Timestamp { get; set; }
 
         public string? Details { get; set; } // Optional additional details about the action
+
+        public string? ResourceType { get; set; } // e.g., "Patient", "Appointment"
+
+        public string? ResourceId { get; set; }
     }
 }

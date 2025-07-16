@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using TelehealthApi.Core.Data;
 using TelehealthApi.Core.Interfaces;
 
 namespace TelehealthApi.Core.Services
@@ -16,7 +17,7 @@ namespace TelehealthApi.Core.Services
         public async Task LogAuditAsync(string userId, string action, object details, string? resourceType = null, string? resourceId = null)
         {
             using var context = _contextFactory.CreateDbContext();
-            var auditLog = new TelehealthDbContext.AuditLog
+            var auditLog = new AuditLog
             {
                 Id = Guid.NewGuid(),
                 UserId = userId,

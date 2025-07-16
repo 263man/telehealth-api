@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using TelehealthApi.Core.Interfaces;
@@ -7,7 +6,7 @@ using TelehealthApi.Core.Models;
 
 namespace TelehealthApi.Api.Controllers
 {
-    [Authorize] // Requires authentication for all actions in this controller
+    //[Authorize] // Requires authentication for all actions in this controller
     [ApiController]
     [Route("api/[controller]")] // Sets the base route to /api/Patients
     public class PatientsController : ControllerBase
@@ -50,7 +49,7 @@ namespace TelehealthApi.Api.Controllers
 
             try
             {
-                var patient = await _patientService.GetPatientByIdAsync(id, userId);
+                var patient = await _patientService.GetPatientByIdAsync(id, userId, false);
 
                 await _auditLogService.LogAuditAsync(userId, "API_GET_PATIENT_SUCCESS",
                     new { FhirPatientId = id, ClientIp = clientIp }, "Patient", id);
@@ -94,16 +93,15 @@ namespace TelehealthApi.Api.Controllers
                     PhoneNumber = request.PhoneNumber,
                     UserId = userId
                 };
-                var createdPatient = await _patientService.CreatePatientAsync(patientModel, userId);
+                var createdPatient = await _patientService.CreatePatientAsync(patientModel, userId, false);
                 await _auditLogService.LogAuditAsync(userId, "API_CREATE_PATIENT_SUCCESS", new { FhirPatientId = createdPatient.FhirPatientId, Email = createdPatient.Email, ClientIp = clientIp }, "Patient", createdPatient.FhirPatientId);
                 return CreatedAtAction(nameof(GetPatient), new { id = createdPatient.FhirPatientId }, createdPatient);
             }
             catch (InvalidOperationException ex)
-            {   // This now catches both duplicate email AND invalid email format from the service
+            {
                 _logger.LogWarning(ex, "Failed to create patient: {Message}", ex.Message);
                 await _auditLogService.LogAuditAsync(userId, "API_CREATE_PATIENT_FAILED_BUSINESS_LOGIC", new { Email = request.Email, ClientIp = clientIp, Error = ex.Message }, "Patient", null);
                 return Conflict(new { Message = ex.Message });
-                //Consistently returns 409 for business logic errors
             }
             catch (Exception ex)
             {
@@ -134,13 +132,13 @@ namespace TelehealthApi.Api.Controllers
                     FirstName = request.FirstName,
                     LastName = request.LastName,
                     BirthDate = request.BirthDate,
-                    Gender = request.Gender, // Added: Map Gender from request
+                    Gender = request.Gender,
                     Email = request.Email,
-                    PhoneNumber = request.PhoneNumber, // Added: Map PhoneNumber from request
-                    UserId = userId // Assign the authenticated user's ID
+                    PhoneNumber = request.PhoneNumber,
+                    UserId = userId
                 };
 
-                var updatedPatient = await _patientService.UpdatePatientAsync(patientModel, userId);
+                var updatedPatient = await _patientService.UpdatePatientAsync(patientModel, userId, false);
 
                 await _auditLogService.LogAuditAsync(userId, "API_UPDATE_PATIENT_SUCCESS",
                     new { FhirPatientId = updatedPatient.FhirPatientId, Email = updatedPatient.Email, ClientIp = clientIp }, "Patient", updatedPatient.FhirPatientId);
@@ -179,7 +177,7 @@ namespace TelehealthApi.Api.Controllers
 
             try
             {
-                await _patientService.DeletePatientAsync(fhirPatientId, userId);
+                await _patientService.DeletePatientAsync(fhirPatientId, userId, false);
 
                 await _auditLogService.LogAuditAsync(userId, "API_DELETE_PATIENT_SUCCESS",
                     new { FhirPatientId = fhirPatientId, ClientIp = clientIp }, "Patient", fhirPatientId);

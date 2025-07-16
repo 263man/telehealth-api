@@ -1,10 +1,15 @@
-Current Folder PATH listing
+Folder PATH listing
 Volume serial number is D6B6-C5F7
 C:.
 |   .dockerignore
+|   .gitignore
 |   FileStructure.txt
+|   README.md
+|   Telehealth project by Grok.txt
 |   TelehealthApi.sln
 |   
++---.github
+|   \---workflows
 +---TelehealthApi.Api
 |   |   appsettings.Development.json
 |   |   appsettings.json
@@ -244,6 +249,12 @@ C:.
 |   |       application20250701.log
 |   |       application20250702.log
 |   |       application20250703.log
+|   |       application20250704.log
+|   |       application20250705.log
+|   |       application20250707.log
+|   |       application20250708.log
+|   |       application20250713.log
+|   |       application20250714.log
 |   |       
 |   +---obj
 |   |   |   project.assets.json
@@ -282,6 +293,7 @@ C:.
 |   |           |   TelehealthApi.Api.MvcApplicationPartsAssemblyInfo.cache
 |   |           |   TelehealthApi.Api.MvcApplicationPartsAssemblyInfo.cs
 |   |           |   TelehealthApi.Api.pdb
+|   |           |   TelehealthApi.Api.sourcelink.json
 |   |           |   
 |   |           +---EndpointInfo
 |   |           |       TelehealthApi.Api.json
@@ -311,15 +323,11 @@ C:.
 |   |               TelehealthApi.Core.runtimeconfig.json
 |   |               
 |   +---Data
-|   |       Appointment.cs
 |   |       AuditLog.cs
 |   |       Patient.cs
 |   |       
 |   +---Enums
-|   |       AppointmentStatus.cs
-|   |       
 |   +---Interfaces
-|   |       IAppointmentService.cs
 |   |       IAuditLogService.cs
 |   |       IFhirService.cs
 |   |       IPatientService.cs
@@ -333,10 +341,11 @@ C:.
 |   |       20250701151846_OptimizeIndexes.Designer.cs
 |   |       20250702101854_UpdatePatientTable.cs
 |   |       20250702101854_UpdatePatientTable.Designer.cs
+|   |       20250713130727_RemoveAppointments.cs
+|   |       20250713130727_RemoveAppointments.Designer.cs
 |   |       TelehealthDbContextModelSnapshot.cs
 |   |       
 |   +---Models
-|   |       AppointmentModel.cs
 |   |       PatientModel.cs
 |   |       
 |   +---obj
@@ -368,6 +377,7 @@ C:.
 |   |           |   TelehealthApi.Core.genruntimeconfig.cache
 |   |           |   TelehealthApi.Core.GlobalUsings.g.cs
 |   |           |   TelehealthApi.Core.pdb
+|   |           |   TelehealthApi.Core.sourcelink.json
 |   |           |   
 |   |           +---ref
 |   |           |       TelehealthApi.Core.dll
@@ -376,7 +386,6 @@ C:.
 |   |                   TelehealthApi.Core.dll
 |   |                   
 |   \---Services
-|           AppointmentService.cs
 |           AuditlogService.cs
 |           EncryptionService.cs
 |           FhirService.cs
@@ -640,6 +649,7 @@ C:.
 |               |   TelehealthApi.Tests.genruntimeconfig.cache
 |               |   TelehealthApi.Tests.GlobalUsings.g.cs
 |               |   TelehealthApi.Tests.pdb
+|               |   TelehealthApi.Tests.sourcelink.json
 |               |   
 |               +---ref
 |               |       TelehealthApi.Tests.dll
@@ -724,8 +734,6 @@ C:.
     |           |   TelehealthApi.Web.exe
     |           |   TelehealthApi.Web.pdb
     |           |   TelehealthApi.Web.runtimeconfig.json
-    |           |   TelehealthApi.Web.staticwebassets.endpoints.json
-    |           |   TelehealthApi.Web.staticwebassets.runtime.json
     |           |   
     |           \---runtimes
     |               +---unix
@@ -772,10 +780,11 @@ C:.
     |   |       NavMenu.razor.css
     |   |       
     |   \---Pages
-    |           Counter.razor
     |           Error.razor
     |           Home.razor
-    |           Weather.razor
+    |           PatientOnboard.razor
+    |           _Host.cshtml
+    |           _Host.cshtml.cs
     |           
     +---obj
     |   |   project.assets.json
@@ -787,24 +796,20 @@ C:.
     |   \---Debug
     |       \---net8.0
     |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+    |           |   ApiEndpoints.json
     |           |   apphost.exe
     |           |   rbcswa.dswa.cache.json
     |           |   rjimswa.dswa.cache.json
     |           |   rjsmcshtml.dswa.cache.json
     |           |   rjsmrazor.dswa.cache.json
     |           |   rpswa.dswa.cache.json
-    |           |   staticwebassets.build.endpoints.json
-    |           |   staticwebassets.build.json
-    |           |   staticwebassets.build.json.cache
-    |           |   staticwebassets.development.json
-    |           |   staticwebassets.references.upToDateCheck.txt
     |           |   staticwebassets.removed.txt
-    |           |   staticwebassets.upToDateCheck.txt
     |           |   Teleheal.4A066CD8.Up2Date
     |           |   TelehealthApi.Web.AssemblyInfo.cs
     |           |   TelehealthApi.Web.AssemblyInfoInputs.cache
     |           |   TelehealthApi.Web.assets.cache
     |           |   TelehealthApi.Web.csproj.AssemblyReference.cache
+    |           |   TelehealthApi.Web.csproj.BuildWithSkipAnalyzers
     |           |   TelehealthApi.Web.csproj.CoreCompileInputs.cache
     |           |   TelehealthApi.Web.csproj.FileListAbsolute.txt
     |           |   TelehealthApi.Web.dll
@@ -813,6 +818,9 @@ C:.
     |           |   TelehealthApi.Web.GlobalUsings.g.cs
     |           |   TelehealthApi.Web.MvcApplicationPartsAssemblyInfo.cache
     |           |   TelehealthApi.Web.pdb
+    |           |   TelehealthApi.Web.RazorAssemblyInfo.cache
+    |           |   TelehealthApi.Web.RazorAssemblyInfo.cs
+    |           |   TelehealthApi.Web.sourcelink.json
     |           |   
     |           +---ref
     |           |       TelehealthApi.Web.dll
@@ -822,16 +830,9 @@ C:.
     |           |       
     |           +---scopedcss
     |           |   +---bundle
-    |           |   |       TelehealthApi.Web.styles.css
-    |           |   |       
     |           |   +---Components
     |           |   |   \---Layout
-    |           |   |           MainLayout.razor.rz.scp.css
-    |           |   |           NavMenu.razor.rz.scp.css
-    |           |   |           
     |           |   \---projectbundle
-    |           |           TelehealthApi.Web.bundle.scp.css
-    |           |           
     |           \---staticwebassets
     +---Properties
     |       launchSettings.json

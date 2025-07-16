@@ -1,0 +1,67 @@
+@page "/patients"
+@inject IHttpClientFactory HttpClientFactory // Changed from HttpClient
+@using TelehealthApi.Core.Models // Assuming PatientModel is here
+@using Hl7.Fhir.Model // For FHIR Patient resource
+@using System.Net.Http.Json // For GetFromJsonAsync
+@using System.Linq // For .Any() and .FirstOrDefault()
+
+<h3>Patients List</h3>
+
+@if (patients == null)
+{
+    <p><em>Loading patients...</em></p>
+}
+else if (!patients.Any())
+{
+    <p>No patients found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FHIR ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patient in patients)
+            {
+                <tr>
+                    <td>@patient.Id</td>
+                    <td>@(patient.Name?.FirstOrDefault()?.Given?.FirstOrDefault())</td>
+                    <td>@(patient.Name?.FirstOrDefault()?.Family)</td>
+                    <td>@(patient.Telecom?.FirstOrDefault(t => t.System == ContactPoint.ContactPointSystem.Email)?.Value)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Hl7.Fhir.Model.Patient>? patients; // Made nullable and initialized to null
+
+    protected override async System.Threading.Tasks.Task OnInitializedAsync() // Explicitly qualified Task
+    {
+        try
+        {
+            // Use the named HttpClient configured in Program.cs
+            var client = HttpClientFactory.CreateClient("PatientOnboard"); // Corrected call
+
+            // Adjust the API endpoint as per your PatientsController
+            // Ensure your API returns a List<Hl7.Fhir.Model.Patient>
+            var response = await client.GetFromJsonAsync<List<Hl7.Fhir.Model.Patient>>("api/patients");
+
+            patients = response ?? new List<Hl7.Fhir.Model.Patient>(); // Handle null response
+        }
+        catch (HttpRequestException ex)
+        {
+            // Log or display error if API call fails
+            Console.WriteLine($"Error fetching patients: {ex.Message}");
+            // You might want to set a user-friendly error message here
+            patients = new List<Hl7.Fhir.Model.Patient>(); // Initialize to empty list on error
+        }
+    }
+}
